@@ -2,6 +2,7 @@
 
 Etapas del proyecto
 Comunicación SD (La parte de la SD se realiza mediante protocolo ISP)
+
 Escritura en memoria SD
 Lectura del contenido de memoria SD
 Borrado del contenido de memoria SD
