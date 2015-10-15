@@ -1,12 +1,27 @@
-;
-; TPLDM.asm
-;
-; Created: 13/10/2015 09:01:13 p.m.
-; Author : mtomas
-;
+.INCLUDE "M8DEF.INC"                                  ; Incluye definición archivos 
+
+; .EQU TEMP=4
+
+.DSEG
+.org 0x160
+
+;Variables necesarias
+	temperatura: .byte 1
+    horas: .byte 1
+    minutos: .byte 1
+	dia: .byte 1
+	mes: .byte 1
+	anio: .byte 1		
+
+.CSEG 
+.ORG 0x00
+JMP PROGRAMA   
 
 
-; Replace with your application code
-start:
-    inc r16
-    rjmp start
+.ORG 0x30									           
+PROGRAMA:
+    LDI R16,HIGH(RAMEND)
+    OUT SPH,R16
+    LDI R16,LOW(RAMEND)
+    OUT SPL,R16
+
