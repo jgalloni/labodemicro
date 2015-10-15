@@ -1,7 +1,5 @@
 .INCLUDE "M8DEF.INC"                                  ; Incluye definición archivos 
 
-; .EQU TEMP=4
-
 .DSEG
 .org 0x160
 
@@ -18,10 +16,21 @@
 RJMP PROGRAMA   
 
 
-.ORG 0x30									           
+.ORG 0x30
+/*aqui se incluyen los bloques de codigo que implementemos por separado*/
+.include "func_m1.asm"
+.include "func_m2.asm"
+/***********************************************************************/					
+									           
 PROGRAMA:
     LDI R16,HIGH(RAMEND)
     OUT SPH,R16
     LDI R16,LOW(RAMEND)
     OUT SPL,R16
+	
+	RCALL subrutina_test_m
+
+	RCALL subrutina_test_m2
+	
+	END: RJMP END 
 

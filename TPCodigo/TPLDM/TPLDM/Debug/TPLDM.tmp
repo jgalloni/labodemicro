@@ -12,6 +12,8 @@
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\m8def.inc</FILE>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\M8DEF.INC</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\func_m1.asm</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\func_m2.asm</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
   <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\Debug\TPLDM.obj</FILE>
@@ -24,12 +26,17 @@
   <FILE>TPLDM.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <temperatura><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>9</LINE></temperatura>
-  <horas><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>10</LINE></horas>
-  <minutos><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>11</LINE></minutos>
-  <dia><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>12</LINE></dia>
-  <mes><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>13</LINE></mes>
-  <anio><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>14</LINE></anio>
-  <PROGRAMA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>22</LINE></PROGRAMA>
+  <temperatura><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>7</LINE></temperatura>
+  <horas><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>8</LINE></horas>
+  <minutos><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>9</LINE></minutos>
+  <dia><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>10</LINE></dia>
+  <mes><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>11</LINE></mes>
+  <anio><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>12</LINE></anio>
+  <PROGRAMA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>25</LINE></PROGRAMA>
+  <subrutina_test_m><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\func_m1.asm</FILE><LINE>2</LINE></subrutina_test_m>
+  <LOOP><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\func_m1.asm</FILE><LINE>5</LINE></LOOP>
+  <subrutina_test_m2><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\func_m2.asm</FILE><LINE>9</LINE></subrutina_test_m2>
+  <LOOP2><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\func_m2.asm</FILE><LINE>12</LINE></LOOP2>
+  <END><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>35</LINE></END>
  </LABELS>
 </ASSEMBLER_INFO>
