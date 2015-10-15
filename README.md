@@ -27,6 +27,7 @@ Etapas del proyecto
     Implementacion del circuito
 
 
+
     Documentación
 
 
