@@ -1,0 +1,35 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.57</VERSION>
+ <DEVICE>"ATmega8"</DEVICE>
+ <WORKING_DIR>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc</DIR>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\m8def.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\M8DEF.INC</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\Debug\TPLDM.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>TPLDM.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>TPLDM.map</FILE>
+  <FILE>TPLDM.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <temperatura><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>9</LINE></temperatura>
+  <horas><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>10</LINE></horas>
+  <minutos><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>11</LINE></minutos>
+  <dia><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>12</LINE></dia>
+  <mes><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>13</LINE></mes>
+  <anio><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>14</LINE></anio>
+  <PROGRAMA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM\TPLDM\main.asm</FILE><LINE>22</LINE></PROGRAMA>
+ </LABELS>
+</ASSEMBLER_INFO>

@@ -15,7 +15,7 @@
 
 .CSEG 
 .ORG 0x00
-JMP PROGRAMA   
+RJMP PROGRAMA   
 
 
 .ORG 0x30									           
