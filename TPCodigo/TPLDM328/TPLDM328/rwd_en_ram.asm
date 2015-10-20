@@ -8,19 +8,14 @@
 
 ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
 ;recibe el parametro de la fecha 
-;lo escribe en la posicion de ram que se le indique en formato DD/MM/AAAA
+;lo escribe en la posicion de ram que se le indique en formato DDMMAAAA
+
 ;Al final de la fecha, coloca una coma
 	LDS R16,dia           
-    ST   X+,R16
-
-	LDI R16,barra           
     ST   X+,R16
 	
 	LDS R16,mes           
     ST   X+,R16	               
-	
-	LDI R16,barra           
-    ST   X+,R16
 	
 	LDS R16,anio           
     ST   X+,R16
@@ -29,13 +24,10 @@ ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
     ST   X+,R16
 
 ;recibe el parametro de la hora
-; lo escribe en la posicion de la ram que se le indique en formato HH:MM
+; lo escribe en la posicion de la ram que se le indique en formato HHMM
 ; Al final de la hora, coloca una coma
 	
 	LDS R16,horas           
-    ST   X+,R16
-
-	LDI R16,dos_puntos           
     ST   X+,R16
 
 	LDS R16,minutos
@@ -81,7 +73,7 @@ LOOP_BTFHTER:
 	LDI XH,HIGH(tabla_temperaturas)
 
 	LDI R17,0
-	STS ocupacion_tabla_temp_ram,R17 ;marcamos como "0" el nivel de ocupación de la tabla
+	STS ocupacion_tabla_temp_ram,R17 ;marcamos como "0" el nivel de ocupaciÃ³n de la tabla
 ret
 
 GET_TABLA_EN_RAM:
