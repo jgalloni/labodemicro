@@ -13,19 +13,19 @@ ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
 	LDS R16,dia           
     ST   X+,R16
 
-	LDS R16,barra           
+	LDI R16,barra           
     ST   X+,R16
 	
 	LDS R16,mes           
     ST   X+,R16	               
 	
-	LDS R16,barra           
+	LDI R16,barra           
     ST   X+,R16
 	
 	LDS R16,anio           
     ST   X+,R16
 
-	LDS R16,coma           
+	LDI R16,coma           
     ST   X+,R16
 
 ;recibe el parametro de la hora
@@ -35,13 +35,13 @@ ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
 	LDS R16,horas           
     ST   X+,R16
 
-	LDS R16,dos_puntos           
+	LDI R16,dos_puntos           
     ST   X+,R16
 
 	LDS R16,minutos
 	ST	X+,R16
 
-	LDS R16,coma           
+	LDI R16,coma           
     ST   X+,R16
 
 ;Recibe el parametro de la temperatura
@@ -53,8 +53,14 @@ ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
 
 ; Se escribe un "punto y coma" para indicar el fin de linea
 
-	LDS R16,pcoma           
+	LDI R16,pcoma           
     ST   X+,R16
+
+	LDS R16,ocupacion_tabla_temp_ram	;actualizamos el valor de Ocupacion_tabla_temperaturas_en_ram
+	LDI R17,LONG_LOG
+	ADD R16,R17					;para ello lo que hacemos es sumar el nuevo largo de los datos copiados
+	STS ocupacion_tabla_temp_ram,R16
+
 ret
 
 BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM:
@@ -64,7 +70,7 @@ BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM:
 	LDI R17,TAMANIO_TABLA_TEMPERATURA ;Contador
 	LDI XL,LOW(tabla_temperaturas)
 	LDI XH,HIGH(tabla_temperaturas)
-	LDI R18,0x0
+	LDI R18,0x00
 
 LOOP_BTFHTER:
 	ST X+,R18
@@ -73,6 +79,9 @@ LOOP_BTFHTER:
 
 	LDI XL,LOW(tabla_temperaturas)
 	LDI XH,HIGH(tabla_temperaturas)
+
+	LDI R17,0
+	STS ocupacion_tabla_temp_ram,R17 ;marcamos como "0" el nivel de ocupación de la tabla
 ret
 
 GET_TABLA_EN_RAM:

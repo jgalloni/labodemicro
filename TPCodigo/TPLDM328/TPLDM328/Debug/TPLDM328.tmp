@@ -30,14 +30,15 @@
   <FILE>TPLDM328.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <temperatura><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>15</LINE></temperatura>
-  <dia><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>16</LINE></dia>
-  <mes><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>17</LINE></mes>
-  <anio><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>18</LINE></anio>
-  <horas><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>19</LINE></horas>
-  <minutos><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>20</LINE></minutos>
-  <tabla_temperaturas><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>21</LINE></tabla_temperaturas>
-  <PROGRAMA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>40</LINE></PROGRAMA>
+  <temperatura><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>16</LINE></temperatura>
+  <dia><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>17</LINE></dia>
+  <mes><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>18</LINE></mes>
+  <anio><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>19</LINE></anio>
+  <horas><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>20</LINE></horas>
+  <minutos><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>21</LINE></minutos>
+  <tabla_temperaturas><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>22</LINE></tabla_temperaturas>
+  <ocupacion_tabla_temp_ram><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>23</LINE></ocupacion_tabla_temp_ram>
+  <PROGRAMA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>42</LINE></PROGRAMA>
   <subrutina_test_m><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm</FILE><LINE>2</LINE></subrutina_test_m>
   <LOOP><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm</FILE><LINE>5</LINE></LOOP>
   <subrutina_test_m2><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm</FILE><LINE>9</LINE></subrutina_test_m2>
@@ -45,12 +46,14 @@
   <DAME_FECHA_HORA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>8</LINE></DAME_FECHA_HORA>
   <SET_FECHA_HORA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>28</LINE></SET_FECHA_HORA>
   <ESCRIBIR_FECHA_HORA_TEMP_EN_RAM><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>9</LINE></ESCRIBIR_FECHA_HORA_TEMP_EN_RAM>
-  <BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>60</LINE></BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM>
-  <LOOP_BTFHTER><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>69</LINE></LOOP_BTFHTER>
-  <GET_TABLA_EN_RAM><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>78</LINE></GET_TABLA_EN_RAM>
+  <BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>66</LINE></BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM>
+  <LOOP_BTFHTER><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>75</LINE></LOOP_BTFHTER>
+  <GET_TABLA_EN_RAM><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>87</LINE></GET_TABLA_EN_RAM>
   <COPY_FROM_TO><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\copy_ram_to_sd.asm</FILE><LINE>8</LINE></COPY_FROM_TO>
   <INICIALIZAR_PUERTO_TEMPERATURA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm</FILE><LINE>9</LINE></INICIALIZAR_PUERTO_TEMPERATURA>
   <DAME_TEMPERATURA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm</FILE><LINE>16</LINE></DAME_TEMPERATURA>
-  <END><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>51</LINE></END>
+  <INICIO_LOOP_SENSADO><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>50</LINE></INICIO_LOOP_SENSADO>
+  <A_DORMIR><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>67</LINE></A_DORMIR>
+  <END><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>72</LINE></END>
  </LABELS>
 </ASSEMBLER_INFO>
