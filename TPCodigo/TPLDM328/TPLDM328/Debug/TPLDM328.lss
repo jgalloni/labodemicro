@@ -1,12 +1,16 @@
 
-AVRASM ver. 2.1.57  C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm Tue Oct 20 09:26:20 2015
+AVRASM ver. 2.1.57  C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm Tue Oct 20 13:36:02 2015
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\m328def.inc'
 C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\M328DEF.INC'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(21): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_m1.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(22): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_m2.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(30): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(31): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(33): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(34): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(35): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\copy_ram_to_sd.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(36): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm'
                  
-                 .INCLUDE "M328DEF.INC"                                  ; Incluye definición archivos 
+                 .INCLUDE "M328DEF.INC"				; Incluye definición archivos 
                  
                  ;***** Created: 2011-02-09 12:03 ******* Source: ATmega328.xml ***********
                  ;*************************************************************************
@@ -1029,25 +1033,34 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(22
                  
                  ; ***** END OF FILE ******************************************************
                  
+                 .EQU LIM_MAX_TABLA_TEMPERATURAS=512	;Max tamaño esperable en tabla en RAM
+                 .EQU TAMANIO_TABLA_TEMPERATURA=100	;bytes
+                 .EQU TAMANIO_TEXTO_TEMPERATURA=1	;bytes
+                 .EQU BARRA='/'
+                 .EQU DOS_PUNTOS=':'
+                 .EQU COMA=','
+                 .EQU PCOMA=';'
+                 
                  .DSEG
                  .org 0x160
                  
                  ;Variables necesarias
-000160           	temperatura: .byte 1
-000161               horas: .byte 1
-000162               minutos: .byte 1
-000163           	dia: .byte 1
-000164           	mes: .byte 1
-000165           	anio: .byte 1		
+000160           	temperatura: .byte TAMANIO_TEXTO_TEMPERATURA
+000161           	dia: .byte 1
+000162           	mes: .byte 1
+000163           	anio: .byte 1
+000164           	horas: .byte 1
+000165           	minutos: .byte 1
+000166           	tabla_temperaturas: .byte TAMANIO_TABLA_TEMPERATURA 
                  
                  .CSEG 
                  .ORG 0x00
-000000 c037      RJMP PROGRAMA   
+000000 c080      RJMP PROGRAMA   
                  
                  
                  .ORG 0x30
                  /*aqui se incluyen los bloques de codigo que implementemos por separado*/
-                 .include "func_m1.asm"
+                 .include "func_test_m1.asm"		;Archivo Test, se puede borrar
                  
                  subrutina_test_m:
                  ;retardo
@@ -1055,7 +1068,7 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(22
                  LOOP:
 000031 952a      	DEC R18
 000032 f7f1      	BRNE LOOP
-                 .include "func_m2.asm"
+                 .include "func_test_m2.asm"		;Archivo Test, se puede borrar
 000033 9508      
                   * AsmFile1.asm
                   *
@@ -1070,19 +1083,171 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(22
                  LOOP2:
 000035 952a      	DEC R18
 000036 f7f1      	BRNE LOOP2
-000037 9508      /***********************************************************************/					
+000037 9508      
+                 .include "time.asm"				;Rutinas para obtener fecha y hora
+                 
+                  * AsmFile1.asm
+                  *
+                  *  Created: 20/10/2015 09:48:29 a.m.
+                  *   Author: mtomas
+                  */ 
+                 
+                 DAME_FECHA_HORA:
+                 ;utilizaría el RTC parac obtener y cargar la hora y la fecha en las variables:
+                 ; - fecha
+                 ; - hora
+                 ;Utiliza R18
+000038 e124          ldi r18,20		;Suponemos que la fecha es "20/10/15"
+000039 9320 0161     sts dia, r18	
+00003b e02a          ldi r18,10		;Suponemos que la fecha es "20/10/15"
+00003c 9320 0162     sts mes, r18	
+00003e e02f          ldi r18,15		;Suponemos que la fecha es "20/10/15"
+00003f 9320 0163     sts anio, r18	
+                 
+                 
+000041 e02d      	ldi r18,13		;suponemos que la hora es "13:15"
+000042 9320 0164 	sts horas, r18
+000044 e02f      	ldi r18,15		;suponemos que la hora es "13:15"
+000045 9320 0165 	sts minutos, r18
+                 
+000047 9508      ret
+                 
+                 SET_FECHA_HORA:
+                 ;configura la fecha y la hora en el RTC del uC
+000048 9508      ret
+                 
+                 .include "rwd_en_ram.asm"		;Rutinas para escribir, leer y borrar datos de la ram
+                 
+                  * datos_en_ram.asm
+                  *
+                  *  Created: 20/10/2015 09:49:00 a.m.
+                  *   Author: mtomas
+                  */ 
+                 
+                 
+                 ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
+                 ;recibe el parametro de la fecha 
+                 ;lo escribe en la posicion de ram que se le indique en formato DD/MM/AAAA
+                 ;Al final de la fecha, coloca una coma
+000049 9100 0161 	LDS R16,dia           
+00004b 930d          ST   X+,R16
+                 
+00004c 9100 002f 	LDS R16,barra           
+00004e 930d          ST   X+,R16
+                 	
+00004f 9100 0162 	LDS R16,mes           
+000051 930d          ST   X+,R16	               
+                 	
+000052 9100 002f 	LDS R16,barra           
+000054 930d          ST   X+,R16
+                 	
+000055 9100 0163 	LDS R16,anio           
+000057 930d          ST   X+,R16
+                 
+000058 9100 002c 	LDS R16,coma           
+00005a 930d          ST   X+,R16
+                 
+                 ;recibe el parametro de la hora
+                 ; lo escribe en la posicion de la ram que se le indique en formato HH:MM
+                 ; Al final de la hora, coloca una coma
+                 	
+00005b 9100 0164 	LDS R16,horas           
+00005d 930d          ST   X+,R16
+                 
+00005e 9100 003a 	LDS R16,dos_puntos           
+000060 930d          ST   X+,R16
+                 
+000061 9100 0165 	LDS R16,minutos
+000063 930d      	ST	X+,R16
+                 
+000064 9100 002c 	LDS R16,coma           
+000066 930d          ST   X+,R16
+                 
+                 ;Recibe el parametro de la temperatura
+                 ;lo escribe en la posicion de la ram que se le indique, usando 5 caracteres::
+                 ; +02.8
+                 ; -10.4
+000067 9100 0160 	LDS R16,temperatura           
+000069 930d          ST   X+,R16
+                 
+                 ; Se escribe un "punto y coma" para indicar el fin de linea
+                 
+00006a 9100 003b 	LDS R16,pcoma           
+00006c 930d          ST   X+,R16
+00006d 9508      ret
+                 
+                 BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM:
+                 ;llenar tabla con ceros y volver puntero al inicio
+                 ;Usa R17 y R18
+                 
+00006e e614      	LDI R17,TAMANIO_TABLA_TEMPERATURA ;Contador
+00006f e6a6      	LDI XL,LOW(tabla_temperaturas)
+000070 e0b1      	LDI XH,HIGH(tabla_temperaturas)
+000071 e020      	LDI R18,0x0
+                 
+                 LOOP_BTFHTER:
+000072 932d      	ST X+,R18
+000073 951a      	DEC R17
+000074 f7e9      	BRNE LOOP_BTFHTER
+                 
+000075 e6a6      	LDI XL,LOW(tabla_temperaturas)
+000076 e0b1      	LDI XH,HIGH(tabla_temperaturas)
+000077 9508      ret
+                 
+                 GET_TABLA_EN_RAM:
+                 ;entregaria un punturo al inicio de la tabla, y la longitud de la misma
+000078 9508      ret
+                 .include "copy_ram_to_sd.asm"	;Rutinas para copiar datos de la RAM a la SD
+                 
+                  * copy_ram_to_sd.asm
+                  *
+                  *  Created: 20/10/2015 09:53:15 a.m.
+                  *   Author: mtomas
+                  */ 
+                 
+                 COPY_FROM_TO:
+                 ;La idea es poder hacer una funcion que pueda copiar datos desde una ubicacion a otra
+                 ;independientemente de donde a donde sea
+                 ;Tal vez se usaria para copiar datos de la RAM a la SD, y luego para copiar de la SD a la PC
+                 .include "temperatura.asm"		;Rutinas para leer la medicion del sensor de temperatura
+000079 9508      
+                  * temperatura.asm
+                  *
+                  *  Created: 20/10/2015 10:26:21 a.m.
+                  *   Author: mtomas
+                  */ 
+                 
+                 
+                  INICIALIZAR_PUERTO_TEMPERATURA:
+                  ;setea el puerto X como entrada para la lectura de temperaturas
+                  ;usa R17
+00007a e010      	LDI R17,0x00	;Load 0b00000000 in R17
+00007b b904      	OUT DDRB,R16	;Configure PortB as an Input port
+00007c 9508       ret
+                 
+                  DAME_TEMPERATURA:
+                 ; Lee el valor de la tension ingresada por el puerto conectado al sensor
+                 ; Convierte el valor leido a grados celsius
+                 ; Guarda la temperatura medida en la variable "temperatura"
+                 ; Usa R17
+00007d b113      	IN R17,PINB		;Toma dato de Port B
+                 	;hacer cuenta para convertir Volts en grados Celsius y darle el formato correcto
+00007e 9310 0160 	STS temperatura,R17;
+000080 9508      
+                 /***********************************************************************/					
                  									           
                  PROGRAMA:
-000038 e008          LDI R16,HIGH(RAMEND)
-000039 bf0e          OUT SPH,R16
-00003a ef0f          LDI R16,LOW(RAMEND)
-00003b bf0d          OUT SPL,R16
-                 	
-00003c dff3      	RCALL subrutina_test_m
+000081 e008          LDI R16,HIGH(RAMEND)
+000082 bf0e          OUT SPH,R16
+000083 ef0f          LDI R16,LOW(RAMEND)
+000084 bf0d          OUT SPL,R16
                  
-00003d dff6      	RCALL subrutina_test_m2
+                 
                  	
-00003e cfff      	END: RJMP END 
+000085 dfaa      	RCALL subrutina_test_m		;Rutinas para test, se puede borrar
+000086 dfad      	RCALL subrutina_test_m2		;rutinas para test, se puede borrar
+                 	
+000087 cfff      	END: RJMP END 
                  
 
 
@@ -1103,38 +1268,38 @@ counted separately from r26..r31 here.
 "ATmega328" register use summary:
 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:   4 r17:   0 r18:   4 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
-r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 r29:   0 r30:   0 r31:   0 
-x  :   0 y  :   0 z  :   0 
-Registers used: 2 out of 35 (5.7%)
+r16:  29 r17:   5 r18:  16 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
+r24:   0 r25:   0 r26:   2 r27:   2 r28:   0 r29:   0 r30:   0 r31:   0 
+x  :  13 y  :   0 z  :   0 
+Registers used: 6 out of 35 (17.1%)
 
 "ATmega328" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   2 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brne  :   3 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   0 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   0 cpse  :   0 dec   :   2 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   0 jmp   :   0 
-ld    :   0 ldd   :   0 ldi   :   4 lds   :   0 lpm   :   0 lsl   :   0 
+cpi   :   0 cpse  :   0 dec   :   3 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   0 jmp   :   0 
+ld    :   0 ldd   :   0 ldi   :  16 lds   :  12 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :   2 pop   :   0 
-push  :   0 rcall :   2 ret   :   2 reti  :   0 rjmp  :   2 rol   :   0 
+neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :   3 pop   :   0 
+push  :   0 rcall :   2 ret   :  10 reti  :   0 rjmp  :   2 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   0 
+sez   :   0 sleep :   0 spm   :   0 st    :  13 std   :   0 sts   :   6 
 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 7 out of 113 (6.2%)
+Instructions used: 11 out of 113 (9.7%)
 
 "ATmega328" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x00007e     32      0     32   32768   0.1%
-[.dseg] 0x000100 0x000166      0      6      6    2048   0.3%
+[.cseg] 0x000000 0x000110    178      0    178   32768   0.5%
+[.dseg] 0x000100 0x0001ca      0    106    106    2048   5.2%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
 Assembly complete, 0 errors, 0 warnings
