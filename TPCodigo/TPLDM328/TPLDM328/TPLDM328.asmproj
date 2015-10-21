@@ -91,6 +91,9 @@
     <Compile Include="rwd_en_ram.asm">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="setup.asm">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="temperatura.asm">
       <SubType>Code</SubType>
     </Compile>
@@ -104,6 +107,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="main.asm">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tx.asm">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
