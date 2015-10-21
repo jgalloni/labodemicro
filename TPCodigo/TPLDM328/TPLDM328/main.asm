@@ -21,6 +21,7 @@
 	minutos: .byte 1
 	tabla_temperaturas: .byte TAMANIO_TABLA_TEMPERATURA 
 	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar qué tan llena está la ram con datos de tmeperatura
+	indata: .byte 5
 
 .CSEG 
 .ORG 0x00
@@ -37,14 +38,15 @@ RJMP PROGRAMA
 .include "copy_ram_to_sd.asm"	;Rutinas para copiar datos de la RAM a la SD
 .include "temperatura.asm"		;Rutinas para leer la medicion del sensor de temperatura
 
+.include "tx.asm"			;Rutinas transmitir datos a la pc
+.include "setup.asm"		;Rutinas configurar el micro
+
 /***********************************************************************/					
 									           
 PROGRAMA:
-    LDI R16,HIGH(RAMEND)
-    OUT SPH,R16
-    LDI R16,LOW(RAMEND)
-    OUT SPL,R16
-	
+
+	CALL SETUP
+	CALL COMUPC
 	RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM ;inicializa la tabla
 
 	INICIO_LOOP_SENSADO:
@@ -71,3 +73,7 @@ PROGRAMA:
 
 	END: RJMP END 
 
+	.ORG 0x500  ;cambiar pos  ;msj para la pc                    
+MSJ1: .DB "1 para borrar SD,2 para transferir datos,3 para setear hora",0
+MSJ2: .DB "SD borrada ",0
+MSJ3: .DB "Ingrese HH:MM:SS ",0
