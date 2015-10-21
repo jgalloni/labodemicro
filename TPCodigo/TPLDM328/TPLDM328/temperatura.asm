@@ -5,14 +5,6 @@
  *   Author: mtomas
  */ 
 
-
- INICIALIZAR_PUERTO_TEMPERATURA:
- ;setea el puerto X como entrada para la lectura de temperaturas
- ;usa R17
-	LDI R17,0x00	;Load 0b00000000 in R17
-	OUT DDRB,R16	;Configure PortB as an Input port
- ret
-
  DAME_TEMPERATURA:
 ; Lee el valor de la tension ingresada por el puerto conectado al sensor
 ; Convierte el valor leido a grados celsius
