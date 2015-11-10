@@ -41,17 +41,17 @@ COMUPC:
 	cpi R16,1 ;si es uno borra la sd
 	BRNE CMPTXDATA
 ;	rcall BORRARSD
-	ret ;sale
+	reti ;sale interrupcion
 CMPTXDATA:
 	cpi R16,2 ;si transmito lo q hay en la sd
 	BRNE CMPSETHORA
 	rcall TXDATA
-	ret ;sale
+	reti ;sale interrupcion
 CMPSETHORA:
 	cpi R16,3 ;si es tres, seteo la hora
 	BRNE COMUPC ;si mando mal, vuelve a imprimir el msj
 	rcall SETHORA
-	ret ;sale
+	reti ;sale interrupcion
 
 SETHORA:
 	LDI  ZL, LOW(indata)   ;cargo la posicion donde llega el dato
