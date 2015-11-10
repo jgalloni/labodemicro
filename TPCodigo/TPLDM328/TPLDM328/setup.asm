@@ -21,4 +21,22 @@ SETUP:
     LDI R16,LOW(RAMEND)
     OUT SPL,R16
 
+	;configuro las interrupciones externas
+
+	LDI R16,0x1100; ptd3 y 4 como entrada
+	OUT DDRD,R16
+	
+	LDI R16,0x00001111 ;la interrupcion es por flanco ascendente
+	OUT EICRA,R16
+
+	LDI R16,0x11; habilito las interrupciones en las patas 4 y 5
+	OUT EIMSK,R16
+
+	;configuro isp para el rtc
+
+	LDI R16,1
+	STS TWSR,R16
+
+	SEI
+
  ret
