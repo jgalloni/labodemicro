@@ -14,6 +14,7 @@ SETUP:
 	ldi R16,0x86
 	sts  UCSR0C,R16 ;8bits, 1 de stop sin pariedad
 	
+	ldi R16,0
 	;configuro el stack
 
 	LDI R16,HIGH(RAMEND)
@@ -23,19 +24,20 @@ SETUP:
 
 	;configuro las interrupciones externas
 
-	LDI R16,0x1100; ptd3 y 4 como entrada
+	LDI R16,0b10011; ptd3 y 4 como entrada
 	OUT DDRD,R16
 	
-	LDI R16,0x00001111 ;la interrupcion es por flanco ascendente
-	OUT EICRA,R16
+	LDI R16,5 ;la interrupcion es por cambio de nivel
+	sts EICRA,R16
 
-	LDI R16,0x11; habilito las interrupciones en las patas 4 y 5
+	LDI R16,0b11; habilito las interrupciones en las patas 4 y 5
 	OUT EIMSK,R16
 
+;	ldi r16,0
 	;configuro isp para el rtc
 
-	LDI R16,1
-	STS TWSR,R16
+	;LDI R16,1
+	;STS TWSR,R16
 
 	SEI
 

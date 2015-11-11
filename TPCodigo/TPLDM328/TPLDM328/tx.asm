@@ -29,6 +29,8 @@ ENDRECEIVEDATA:
 	ret
 
 COMUPC:
+	ldi r16,0b10000
+	out PORTD,r16
 	LDI  ZL, LOW(MSJ1<<1)   ;cargo msj
 	LDI  ZH, HIGH(MSJ1<<1)
 	RCALL SENDDATA
