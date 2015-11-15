@@ -13,19 +13,10 @@ ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
 	LDS R16,dia           
     ST   X+,R16
 
-	LDI R16,barra           
-    ST   X+,R16
-	
 	LDS R16,mes           
     ST   X+,R16	               
-	
-	LDI R16,barra           
-    ST   X+,R16
-	
-	LDS R16,anio           
-    ST   X+,R16
 
-	LDI R16,coma           
+	LDS R16,anio           
     ST   X+,R16
 
 ;recibe el parametro de la hora
@@ -35,14 +26,8 @@ ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
 	LDS R16,horas           
     ST   X+,R16
 
-	LDI R16,dos_puntos           
-    ST   X+,R16
-
 	LDS R16,minutos
 	ST	X+,R16
-
-	LDI R16,coma           
-    ST   X+,R16
 
 ;Recibe el parametro de la temperatura
 ;lo escribe en la posicion de la ram que se le indique, usando 5 caracteres::
@@ -52,9 +37,6 @@ ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
     ST   X+,R16
 
 ; Se escribe un "punto y coma" para indicar el fin de linea
-
-	LDI R16,pcoma           
-    ST   X+,R16
 
 	LDS R16,ocupacion_tabla_temp_ram	;actualizamos el valor de Ocupacion_tabla_temperaturas_en_ram
 	LDI R17,LONG_LOG

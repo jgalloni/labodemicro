@@ -1,7 +1,7 @@
 .INCLUDE "M328DEF.INC"				; Incluye definición archivos 
 
-.EQU LIM_MAX_TABLA_TEMPERATURAS=200	;Max tamaño esperable en tabla en RAM
-.EQU TAMANIO_TABLA_TEMPERATURA=20	;bytes
+.EQU LIM_MAX_TABLA_TEMPERATURAS=60	;Max tamaño esperable en tabla en RAM
+.EQU TAMANIO_TABLA_TEMPERATURA=10	;bytes para llenar con lineas tipo DDMMAAAAHHMMTTTTT, 
 .EQU TAMANIO_TEXTO_TEMPERATURA=1	;bytes
 .EQU BARRA='/'
 .EQU DOS_PUNTOS=':'
@@ -19,6 +19,12 @@
 	anio: .byte 1
 	horas: .byte 1
 	minutos: .byte 1
+	set_dia: .byte 1
+	set_mes: .byte 1
+	set_anio: .byte 1
+	set_horas: .byte 1
+	set_minutos: .byte 1
+	set_segundos: .byte 1
 	tabla_temperaturas: .byte TAMANIO_TABLA_TEMPERATURA 
 	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar qué tan llena está la ram con datos de tmeperatura
 	indata: .byte 5

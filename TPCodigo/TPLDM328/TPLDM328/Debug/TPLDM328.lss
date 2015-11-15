@@ -1,16 +1,16 @@
 
-AVRASM ver. 2.1.57  C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm Tue Nov 10 21:51:31 2015
+AVRASM ver. 2.1.57  C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm Sun Nov 15 20:21:01 2015
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\m328def.inc'
 C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\M328DEF.INC'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(39): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(40): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(42): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(43): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(44): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\copy_ram_to_sd.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(45): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(47): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\setup.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(45): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(46): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(49): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(50): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\copy_ram_to_sd.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(51): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(53): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm'
+C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(54): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\setup.asm'
                  
                  .INCLUDE "M328DEF.INC"				; Incluye definición archivos 
                  
@@ -1035,8 +1035,8 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48
                  
                  ; ***** END OF FILE ******************************************************
                  
-                 .EQU LIM_MAX_TABLA_TEMPERATURAS=200	;Max tamaño esperable en tabla en RAM
-                 .EQU TAMANIO_TABLA_TEMPERATURA=20	;bytes
+                 .EQU LIM_MAX_TABLA_TEMPERATURAS=60	;Max tamaño esperable en tabla en RAM
+                 .EQU TAMANIO_TABLA_TEMPERATURA=10	;bytes para llenar con lineas tipo DDMMAAAAHHMMTTTTT, 
                  .EQU TAMANIO_TEXTO_TEMPERATURA=1	;bytes
                  .EQU BARRA='/'
                  .EQU DOS_PUNTOS=':'
@@ -1054,19 +1054,25 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48
 000163           	anio: .byte 1
 000164           	horas: .byte 1
 000165           	minutos: .byte 1
-000166           	tabla_temperaturas: .byte TAMANIO_TABLA_TEMPERATURA 
-00017a           	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar qué tan llena está la ram con datos de tmeperatura
-00017b           	indata: .byte 5
+000166           	set_dia: .byte 1
+000167           	set_mes: .byte 1
+000168           	set_anio: .byte 1
+000169           	set_horas: .byte 1
+00016a           	set_minutos: .byte 1
+00016b           	set_segundos: .byte 1
+00016c           	tabla_temperaturas: .byte TAMANIO_TABLA_TEMPERATURA 
+000176           	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar qué tan llena está la ram con datos de tmeperatura
+000177           	indata: .byte 5
                  
                  .CSEG 
                  .ORG 0x00
-000000 c0cc      RJMP PROGRAMA
+000000 c161      RJMP PROGRAMA
                  
                  ;.ORG INT0addr
                  ;JMP ONOFF
                  
                  .ORG INT0addr
-000002 940c 0095 JMP COMUPC   
+000002 940c 0128 JMP COMUPC   
                  
                  
                  .ORG 0x30
@@ -1104,29 +1110,170 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48
                   */ 
                  
                  DAME_FECHA_HORA:
-                 ;utilizaría el RTC parac obtener y cargar la hora y la fecha en las variables:
-                 ; - fecha
-                 ; - hora
-                 ;Utiliza R18
-000038 e124          ldi r18,20		;Suponemos que la fecha es "20/10/15"
-000039 9320 0161     sts dia, r18	
-00003b e02a          ldi r18,10		;Suponemos que la fecha es "20/10/15"
-00003c 9320 0162     sts mes, r18	
-00003e e02f          ldi r18,15		;Suponemos que la fecha es "20/10/15"
-00003f 9320 0163     sts anio, r18	
+                 	;utilizaría el RTC parac obtener y cargar la hora en las variables:
+                 	;dia, mes, anio, horas,minutos.
+                 
+000038 940e 00af 	CALL I2C_INIT				;inicializa el modo TWI
+00003a 940e 00b9 	CALL I2C_START				;transmite la condición de START
+00003c 940e 00d8 	CALL I2C_READ_STATUS		;lee el registro de Status
+00003e 30a8      	CPI R26,0x08				;se transmitio correctamente el START? (0x08 es la respuesta esperada)
+00003f f4e9      	BRNE ERROR_I2C_READ_STATUS	;jump to error function
+                 
+000040 edb1      	LDI R27,0b11010001			;bus address del SLAVE DS1307(1101000)+R(1) [es la orden de "leer"]
+                 								;A continuacion, escribimos R27 en el I2C Bus
+000041 93b0 00bb 	STS TWDR,R27				;put the address of the slave into TWDR
+000043 e854      	LDI R21, (1<<TWINT)|(1<<TWEN)
+000044 9350 00bc 	STS TWCR,R21				;put the SEND command in TWCR
+                 	LOOP_I2C_WRITE:
+000046 9150 00bc 		LDS R21,TWCR			;Se monitorea el control register (colocado en R21)
+000048 ff57      		SBRS R21,TWINT			;skip next line if TWINT is 1
+000049 cffc      		RJMP LOOP_I2C_WRITE		;jump if TWINT is 1
+                 
+00004a 940e 00d8 	CALL I2C_READ_STATUS		;lee el registro Status
+00004c 34a0      	CPI R26,0x40				;was SLA+R transmitted, ack received?
+00004d f479      	BRNE ERROR_I2C_READ_STATUS	;else jump to error function
+                 	
+                 	;Se solicita la info al RTC
+00004e e854      	LDI R21,(1<<TWINT)|(1<<TWEN)
+00004f 9350 00bc 	STS TWCR,R21
+                 	LOOP_I2C_READ:
+000051 9150 00bc 		LDS R21,TWCR		;read control registre into r21
+000053 ff57      		SBRS R21,TWINT		;skip next line if TWINT is 1
+000054 cffc      		RJMP LOOP_I2C_READ
+000055 91b0 00bb 	LDS R27,TWDR			;Se lee el dato que nos envio el slave y se lo guarda en r27
+                 
+000057 940e 00d8 	CALL I2C_READ_STATUS		;read status register
+000059 35a8      	CPI R26,0x58				;was data transmitted, ack received?
+00005a f411      	BRNE ERROR_I2C_READ_STATUS	;else jump to error function
+                 	
+00005b 940e 00cb 	CALL I2C_STOP
+                 
+                 	;En este punto, en R27 tenemos el dato leido ¿de la fecha y la hora? 
+                 	;Faltaría ver bien que es lo que se esta recibiendo
+                 
+                 	ERROR_I2C_READ_STATUS:
+                 		;falta escribir que se hace en caso de error
+00005d 0000      	nop;
+00005e 9508      ret
+                 
+                 SET_FECHA:
+                 	;configura la fecha en el RTC
+00005f 940e 00af 	CALL I2C_INIT		;initialize the I2C module
+                 		
+000061 940e 00b9 	CALL I2C_START		;transmit a START condition
+000063 ed50      	LDI R21,0b11010000	;SLA(1101000)+W(0)
+000064 940e 00c1 	CALL I2C_SEND		;transmit R21 to I2C bus
+000066 e057      	LDI R21,0x07		;set register pointer to 07
+000067 940e 00c1 	CALL I2C_SEND		;to access the control register
+000069 e050      	LDI R21,0x00		;set control register = 0
+00006a 940e 00c1 	CALL I2C_SEND		;transmit R21 to I2C bus
+00006c 940e 00cb 	CALL I2C_STOP		;transmit Stop condition
+                 
+00006e 940e 00d3 	call I2C_DELAY
+                 
+000070 940e 00b9 	CALL I2C_START		;transmit a START condition
+000072 ed50      	LDI R21,0b11010000	;SLA(1101000)+W(0)
+000073 940e 00c1 	CALL I2C_SEND		;transmit R21 to I2C bus
+000075 e054      	LDI R21,0x04		;set register pointer to 04
+000076 940e 00c1 	CALL I2C_SEND		;to access the control register
+000078 9150 0166 	LDS R21,set_dia		;set dia. Usar notacion BCD
+00007a 940e 00c1 	CALL I2C_SEND		;to access the control register
+00007c 9150 0167 	LDS R21,set_mes		;set mes. Usar notacion BCD
+00007e 940e 00c1 	CALL I2C_SEND		;to access the control register
+000080 9150 0168 	LDS R21,set_anio	;set anio. Usar notacion BCD
+000082 940e 00c1 	CALL I2C_SEND		;transmit R21 to I2C bus
+000084 940e 00cb 	CALL I2C_STOP		;transmit Stop condition
+000086 9508      ret
+                 
+                 SET_HORA:
+                 	;configura la hora en el RTC
+                 	;Vamos a setear el clokc a las 16:58:55 usando el modo de 24 hs.
+                 	
+000087 940e 00af 	CALL I2C_INIT	;inicializa el modulo I2c
+                 
+000089 940e 00b9 	CALL I2C_START		;transmite condición de START
+00008b ed50      	LDI R21,0b11010000	;SLA(1101000) + W(0)
+00008c 940e 00c1 	CALL I2C_SEND		;transmit R21 to I2C bus
+00008e e057      	LDI R21,0x07		;set register pointer to 07
+00008f 940e 00c1 	CALL I2C_SEND		;to access the control register
+000091 e050      	LDI R21,0x00		;set control register = 0
+000092 940e 00c1 	CALL I2C_SEND		;transmit R21 to I2C bus
+000094 940e 00cb 	CALL I2C_STOP		;Transmit a STOP condition
+                 
+000096 940e 00d3 	CALL I2C_DELAY
+                 
+000098 940e 00b9 	CALL I2C_START		;transmit a START condition
+00009a ed50      	LDI R21,0b11010000	;SLA(1101000)+W(0)
+00009b 940e 00c1 	CALL I2C_SEND		;transmit R21 to I2C bus
+00009d e050      	LDI R21,0x00		;set register pointer to 0
+00009e 940e 00c1 	CALL I2C_SEND		;Transmit R21 to I2c Bus
+0000a0 9150 016b 	LDS R21,set_segundos;set seconds to 0x55=55 BCD
+0000a2 940e 00c1 	CALL I2C_SEND		;Transmit R21 too I2C Bus
+0000a4 9150 016a 	LDS R21,set_minutos	;Set minutes to 0x58=58 BCD
+0000a6 940e 00c1 	CALL I2C_SEND		;transmit R21 to I2C bus
+0000a8 9150 0169 	LDS R21,set_horas	;hour = 16 (en modo de 24 hs)
+0000aa 940e 00c1 	CALL I2C_SEND		;transmit R21 to I2C bus
+0000ac 940e 00cb 	CALL I2C_STOP		;transmit a STOP condition
+0000ae 9508      ret
+                 
+                 I2C_INIT:
+                 	;The TWI clock speed is usually 100kHz or 400kHz. Tomaremos 100kHz. 
+                 	;It is set by writting the proper prescaler and clock rate values to:
+                 	; - TWSR (los bits 0 y 1 son el prescaler)
+                 	; - TWBR(TWI Bit Rate Register). 
+                 	; La formula para verificar si el clock speed es adecuado, es: 
+                 	; SCL Frecuency = CPU_CLOCK_frec / (16+2*TWBR*(4^prescaler))
+0000af e050      	LDI R21,0			
+0000b0 9350 00b9 	STS TWSR,R21		;set prescaler bits to zero
+0000b2 e352      	LDI R21,0x32		;move 0x32 into r21
+0000b3 9350 00b8 	STS TWBR,R21		;SCL freq is 100k for micro de 8Mhz
+0000b5 e054      	LDI R21,(1<<TWEN)	;move 0x04 into r21
+0000b6 9350 00bc 	STS TWCR,R21		;enable the TWI
+0000b8 9508      ret
+                 
+                 I2C_START:
+                 	;Se genera la condicion de START
+                 	;To generate a start, load TWCR with 0xA4 (0b10100100, esos 3 unos corresponden a TWINT, TWSTA y TWEN), y luego wait.
+0000b9 ea54      	LDI R21,(1<<TWINT)|(1<<TWSTA)|(1<<TWEN)
+0000ba 9350 00bc 	STS TWCR,R21		;transmit a START condition, es decir el 0x10100100.
+                 LOOP_I2C_START:			
+0000bc 9150 00bc 	LDS R21,TWCR		;read control registre into R21 para ver si todo esta ok
+0000be ff57      	SBRS R21,TWINT		;Skip next line if bit TWINT in register R21 is SET (mask the interrupt flag)
+0000bf cffc      	RJMP LOOP_I2C_START	;jump to Loop if TWINT es 1
+0000c0 9508      RET
+                 
+                 I2C_SEND:
+0000c1 9350 00bb 	STS TWDR,R21		;mvoe SLA+W into TWDR
+0000c3 e854      	LDI R21,(1<<TWINT)|(1<<TWEN)
+0000c4 9350 00bc 	STS TWCR,R21		;configure TWCR to send TWDR
+                 LOOP_I2C_SEND:
+0000c6 9150 00bc 	LDS R21,TWCR		;read control registre into R21
+0000c8 ff57      	SBRS R21,TWINT		;mask the interrupt flag
+0000c9 cffc      	RJMP LOOP_I2C_SEND	;jump to W2 if TWINT is 1
+0000ca 9508      RET
                  
                  
-000041 e02d      	ldi r18,13		;suponemos que la hora es "13:15"
-000042 9320 0164 	sts horas, r18
-000044 e02f      	ldi r18,15		;suponemos que la hora es "13:15"
-000045 9320 0165 	sts minutos, r18
+                 I2C_STOP:
+0000cb e954      	LDI R21,(1<<TWINT)|(1<<TWSTO)|(1<<TWEN)
+0000cc 9350 00bc 	STS  TWCR,R21		;Transmit STOP condition
+                 LOOP_I2C_STOP:	
+0000ce 9150 00bc 	LDS R21,TWCR		;Read control register into R21
+0000d0 ff54      	SBRS R21,TWSTO		;Mask the interrupt flag
+0000d1 cffc      	RJMP LOOP_I2C_STOP	;jump to w3 if TWINT is 1
+0000d2 9508      RET
                  
-000047 9508      ret
+                 I2C_DELAY:
+0000d3 ef6f      	LDI	R22,0xff	
+                 LOOP_I2C_DELAY:	
+0000d4 956a      	DEC R22		
+0000d5 0000      	NOP
+0000d6 f7e9      	BRNE LOOP_I2C_DELAY
+0000d7 9508      RET
                  
-                 SET_FECHA_HORA:
-                 ;configura la fecha y la hora en el RTC del uC
-000048 9508      ret
-                 
+                 I2C_READ_STATUS:
+0000d8 91a0 00b9 	LDS R26,TWSR				;Read status register into r21
+0000da 7fa8      	ANDI R26,0xf8				;mask the prescaler bits
+0000db 9508      RET
                  .include "rwd_en_ram.asm"		;Rutinas para escribir, leer y borrar datos de la ram
                  
                   * datos_en_ram.asm
@@ -1140,83 +1287,65 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48
                  ;recibe el parametro de la fecha 
                  ;lo escribe en la posicion de ram que se le indique en formato DD/MM/AAAA
                  ;Al final de la fecha, coloca una coma
-000049 9100 0161 	LDS R16,dia           
-00004b 930d          ST   X+,R16
+0000dc 9100 0161 	LDS R16,dia           
+0000de 930d          ST   X+,R16
                  
-00004c e20f      	LDI R16,barra           
-00004d 930d          ST   X+,R16
-                 	
-00004e 9100 0162 	LDS R16,mes           
-000050 930d          ST   X+,R16	               
-                 	
-000051 e20f      	LDI R16,barra           
-000052 930d          ST   X+,R16
-                 	
-000053 9100 0163 	LDS R16,anio           
-000055 930d          ST   X+,R16
+0000df 9100 0162 	LDS R16,mes           
+0000e1 930d          ST   X+,R16	               
                  
-000056 e20c      	LDI R16,coma           
-000057 930d          ST   X+,R16
+0000e2 9100 0163 	LDS R16,anio           
+0000e4 930d          ST   X+,R16
                  
                  ;recibe el parametro de la hora
                  ; lo escribe en la posicion de la ram que se le indique en formato HH:MM
                  ; Al final de la hora, coloca una coma
                  	
-000058 9100 0164 	LDS R16,horas           
-00005a 930d          ST   X+,R16
+0000e5 9100 0164 	LDS R16,horas           
+0000e7 930d          ST   X+,R16
                  
-00005b e30a      	LDI R16,dos_puntos           
-00005c 930d          ST   X+,R16
-                 
-00005d 9100 0165 	LDS R16,minutos
-00005f 930d      	ST	X+,R16
-                 
-000060 e20c      	LDI R16,coma           
-000061 930d          ST   X+,R16
+0000e8 9100 0165 	LDS R16,minutos
+0000ea 930d      	ST	X+,R16
                  
                  ;Recibe el parametro de la temperatura
                  ;lo escribe en la posicion de la ram que se le indique, usando 5 caracteres::
                  ; +02.8
                  ; -10.4
-000062 9100 0160 	LDS R16,temperatura           
-000064 930d          ST   X+,R16
+0000eb 9100 0160 	LDS R16,temperatura           
+0000ed 930d          ST   X+,R16
                  
                  ; Se escribe un "punto y coma" para indicar el fin de linea
                  
-000065 e30b      	LDI R16,pcoma           
-000066 930d          ST   X+,R16
+0000ee 9100 0176 	LDS R16,ocupacion_tabla_temp_ram	;actualizamos el valor de Ocupacion_tabla_temperaturas_en_ram
+0000f0 e01f      	LDI R17,LONG_LOG
+0000f1 0f01      	ADD R16,R17					;para ello lo que hacemos es sumar el nuevo largo de los datos copiados
+0000f2 9300 0176 	STS ocupacion_tabla_temp_ram,R16
                  
-000067 9100 017a 	LDS R16,ocupacion_tabla_temp_ram	;actualizamos el valor de Ocupacion_tabla_temperaturas_en_ram
-000069 e01f      	LDI R17,LONG_LOG
-00006a 0f01      	ADD R16,R17					;para ello lo que hacemos es sumar el nuevo largo de los datos copiados
-00006b 9300 017a 	STS ocupacion_tabla_temp_ram,R16
-                 
-00006d 9508      ret
+0000f4 9508      ret
                  
                  BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM:
                  ;llenar tabla con ceros y volver puntero al inicio
                  ;Usa R17 y R18
                  
-00006e e114      	LDI R17,TAMANIO_TABLA_TEMPERATURA ;Contador
-00006f e6a6      	LDI XL,LOW(tabla_temperaturas)
-000070 e0b1      	LDI XH,HIGH(tabla_temperaturas)
-000071 e020      	LDI R18,0x00
+0000f5 e01a      	LDI R17,TAMANIO_TABLA_TEMPERATURA ;Contador
+0000f6 e6ac      	LDI XL,LOW(tabla_temperaturas)
+0000f7 e0b1      	LDI XH,HIGH(tabla_temperaturas)
+0000f8 e020      	LDI R18,0x00
                  
                  LOOP_BTFHTER:
-000072 932d      	ST X+,R18
-000073 951a      	DEC R17
-000074 f7e9      	BRNE LOOP_BTFHTER
+0000f9 932d      	ST X+,R18
+0000fa 951a      	DEC R17
+0000fb f7e9      	BRNE LOOP_BTFHTER
                  
-000075 e6a6      	LDI XL,LOW(tabla_temperaturas)
-000076 e0b1      	LDI XH,HIGH(tabla_temperaturas)
+0000fc e6ac      	LDI XL,LOW(tabla_temperaturas)
+0000fd e0b1      	LDI XH,HIGH(tabla_temperaturas)
                  
-000077 e010      	LDI R17,0
-000078 9310 017a 	STS ocupacion_tabla_temp_ram,R17 ;marcamos como "0" el nivel de ocupación de la tabla
-00007a 9508      ret
+0000fe e010      	LDI R17,0
+0000ff 9310 0176 	STS ocupacion_tabla_temp_ram,R17 ;marcamos como "0" el nivel de ocupación de la tabla
+000101 9508      ret
                  
                  GET_TABLA_EN_RAM:
                  ;entregaria un punturo al inicio de la tabla, y la longitud de la misma
-00007b 9508      ret
+000102 9508      ret
                  .include "copy_ram_to_sd.asm"	;Rutinas para copiar datos de la RAM a la SD
                  
                   * copy_ram_to_sd.asm
@@ -1230,7 +1359,7 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48
                  ;independientemente de donde a donde sea
                  ;Tal vez se usaria para copiar datos de la RAM a la SD, y luego para copiar de la SD a la PC
                  .include "temperatura.asm"		;Rutinas para leer la medicion del sensor de temperatura
-00007c 9508      
+000103 9508      
                   * temperatura.asm
                   *
                   *  Created: 20/10/2015 10:26:21 a.m.
@@ -1241,11 +1370,44 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48
                  ; Lee el valor de la tension ingresada por el puerto conectado al sensor
                  ; Convierte el valor leido a grados celsius
                  ; Guarda la temperatura medida en la variable "temperatura"
-                 ; Usa R17
-00007d b113      	IN R17,PINB		;Toma dato de Port B
-                 	;hacer cuenta para convertir Volts en grados Celsius y darle el formato correcto
-00007e 9310 0160 	STS temperatura,R17;
-000080 9508      
+                 ; Usa r17 y r18
+                 	
+                 	;Activamos el ADC
+000104 ec17      	LDI R17,0b11000111 ;enable, start conversion y set prescaler
+                 						;el prescaler quedo en 111 (128) para que 20Mhz/128 caiga 
+                 						;dentro del rango de 50khz a 200khz)
+000105 9310 007a 	STS ADCSRA,R17
+                 
+                 	;Toma dato de temperatura del ADC
+                 	;Para eso miramos que el ADC haya terminado de procesar la informacion verificando el estatus del flag 4 de ADCSRA.
+                 	CAPTURA_TEMPERATURA:
+000107 9110 007a 		LDS R17,ADCSRA
+000109 ff14      		SBRS R17,4			;saltea la siguiente instruccion si el bit 4 del registro esta en 1
+00010a cffc      		RJMP CAPTURA_TEMPERATURA
+                 
+                 	;Si se llega a este punto, es porque el ADC ya termino la conversion a digital
+                 
+00010b 9110 0078 	LDS R17,ADCL
+00010d 9120 0079 	LDS R18,ADCH
+                 	;Notar que no usaremos el ADCH pues no vamos a tener temperaturas tan altas
+                 	
+                 	;Notar que la resolucion del ADC es de 10 bits y como alimentamos con 5V 
+                 	;entonces cada paso del ADC equivale a 5mV (pues 5V/1024 es aprox 5mV)
+                 
+                 	;La salida del LM35 varía linealmente con la temperatura (10 mV x °C)
+                 	;Por lo tanto tendremos una resolucion de medio grado
+                 
+                 	;La salida del ADC puede pasarse a Volts haciendo: Vin*(1024) / Vref
+                 	;donde Vin es la tension que entro por la pata del adc (lo que envio el LM35)
+                 	;y donde Vref es 5V 
+                 	;La conversión a °C entonces seria:
+                 	;°C = [Vin*(1024)]/[5v] = Vin *  205
+                 
+00010f ec2d      	LDI R18,205
+000110 031a      	FMUL R17,R18
+                 	;El resultado del producto está en R1:R0, pero utilizo solo R0 porque las temperaturas son bajas
+000111 9200 0160 	STS temperatura,R0
+000113 9508      
                  .include "tx.asm"			;Rutinas transmitir datos a la pc
                  
                  .EQU XTALFREQ=8000000 
@@ -1253,152 +1415,167 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48
                  
                  ;Z puntero al dato ,R16 char a mandar
                  SENDDATA:
-000081 9105      	LPM R16,Z+
-000082 3000      	cpi  R16,0
-000083 f039      	BREQ ENDSENDDATA
-000084 9300 00c6 	sts  UDR0,R16
+000114 9105      	LPM R16,Z+
+000115 3000      	cpi  R16,0
+000116 f039      	BREQ ENDSENDDATA
+000117 9300 00c6 	sts  UDR0,R16
                  WAITSEND:
-000086 9100 00c0 	LDS R16,UCSR0A
-000088 ff06      	sbrs R16,TXC0 ;espera a que termine de mandar el dato
-000089 cffc      	rjmp WAITSEND 
-00008a cff6      	rjmp SENDDATA
+000119 9100 00c0 	LDS R16,UCSR0A
+00011b ff06      	sbrs R16,TXC0 ;espera a que termine de mandar el dato
+00011c cffc      	rjmp WAITSEND 
+00011d cff6      	rjmp SENDDATA
                  ENDSENDDATA:	
-00008b 9508      	ret
+00011e 9508      	ret
                  
                  ;Z puntero a donde se guarda el dato. Con 0 se termina el dato,R16 q llega
                  RECEIVEDATA:
-00008c 9100 00c0 	LDS R16, UCSR0A
-00008e ff07      	sbrs R16, RXC0 ;espera a que llegue el dato
-00008f cffc      	rjmp RECEIVEDATA
-000090 b105      	in R16,UDRE0
-000091 3000      	cpi R16,0
-000092 f009      	BREQ ENDRECEIVEDATA
-000093 9301      	st Z+,R16
+00011f 9100 00c0 	LDS R16, UCSR0A
+000121 ff07      	sbrs R16, RXC0 ;espera a que llegue el dato
+000122 cffc      	rjmp RECEIVEDATA
+000123 b105      	in R16,UDRE0
+000124 3000      	cpi R16,0
+000125 f009      	BREQ ENDRECEIVEDATA
+000126 9301      	st Z+,R16
                  ENDRECEIVEDATA:
-000094 9508      	ret
+000127 9508      	ret
                  
                  COMUPC:
-000095 e100      	ldi r16,0b10000
-000096 b90b      	out PORTD,r16
-000097 e0e0      	LDI  ZL, LOW(MSJ1<<1)   ;cargo msj
-000098 e0fa      	LDI  ZH, HIGH(MSJ1<<1)
-000099 dfe7      	RCALL SENDDATA
-00009a e7eb      	LDI  ZL, LOW(indata)   ;cargo la posicion donde llega el dato
-00009b e0f1      	LDI  ZH, HIGH(indata)
-00009c dfef      	RCALL RECEIVEDATA
-00009d e7eb      	LDI  ZL, LOW(indata)   ;cargo el primer dato
-00009e e0f1      	LDI  ZH, HIGH(indata)
-00009f 8100      	LD R16,Z
-0000a0 3001      	cpi R16,1 ;si es uno borra la sd
-0000a1 f409      	BRNE CMPTXDATA
+000128 e100      	ldi r16,0b10000
+000129 b90b      	out PORTD,r16
+00012a e0e0      	LDI  ZL, LOW(MSJ1<<1)   ;cargo msj
+00012b e0fa      	LDI  ZH, HIGH(MSJ1<<1)
+00012c dfe7      	RCALL SENDDATA
+00012d e7e7      	LDI  ZL, LOW(indata)   ;cargo la posicion donde llega el dato
+00012e e0f1      	LDI  ZH, HIGH(indata)
+00012f dfef      	RCALL RECEIVEDATA
+000130 e7e7      	LDI  ZL, LOW(indata)   ;cargo el primer dato
+000131 e0f1      	LDI  ZH, HIGH(indata)
+000132 8100      	LD R16,Z
+000133 3001      	cpi R16,1 ;si es uno borra la sd
+000134 f409      	BRNE CMPTXDATA
                  ;	rcall BORRARSD
-0000a2 9518      	reti ;sale interrupcion
+000135 9518      	reti ;sale interrupcion
                  CMPTXDATA:
-0000a3 3002      	cpi R16,2 ;si transmito lo q hay en la sd
-0000a4 f411      	BRNE CMPSETHORA
-0000a5 d009      	rcall TXDATA
-0000a6 9518      	reti ;sale interrupcion
+000136 3002      	cpi R16,2 ;si transmito lo q hay en la sd
+000137 f411      	BRNE CMPSETHORA
+000138 d009      	rcall TXDATA
+000139 9518      	reti ;sale interrupcion
                  CMPSETHORA:
-0000a7 3003      	cpi R16,3 ;si es tres, seteo la hora
-0000a8 f761      	BRNE COMUPC ;si mando mal, vuelve a imprimir el msj
-0000a9 d001      	rcall SETHORA
-0000aa 9518      	reti ;sale interrupcion
+00013a 3003      	cpi R16,3 ;si es tres, seteo la hora
+00013b f761      	BRNE COMUPC ;si mando mal, vuelve a imprimir el msj
+00013c d001      	rcall SETHORA
+00013d 9518      	reti ;sale interrupcion
                  
                  SETHORA:
-0000ab e7eb      	LDI  ZL, LOW(indata)   ;cargo la posicion donde llega el dato
-0000ac e0f1      	LDI  ZH, HIGH(indata)
-0000ad dfde      	RCALL RECEIVEDATA
+00013e e7e7      	LDI  ZL, LOW(indata)   ;cargo la posicion donde llega el dato
+00013f e0f1      	LDI  ZH, HIGH(indata)
+000140 dfde      	RCALL RECEIVEDATA
                  	;guardar la hora donde corresponde
-0000ae 9508      	ret
+000141 9508      	ret
                  
                  TXDATA:
                  ;	call READSD ;meter esto en un loop hasta que este vacia la sd
-0000af dfd1      	rcall SENDDATA
-0000b0 9508      	ret	
+000142 dfd1      	rcall SENDDATA
+000143 9508      	ret	
                  
                  
                  .include "setup.asm"		;Rutinas configurar el micro
                  
-                 	;setea el puerto X como entrada para la lectura de temperaturas
+                 	;setea el PORTC.0 como entrada para la lectura de temperaturas
                   	;usa R17
-0000b1 e010      	LDI R17,0x00	;Load 0b00000000 in R17
-0000b2 b904      	OUT DDRB,R16	;Configure PortB as an Input port
+                 	;LDI R17,0x00	;Load 0b00000000 in R17
+                 	;OUT DDRC,R16	;Configure PortC as an Input port
+000144 9838      	CBI DDRC,0 ;configura PORTC.0 como Input port
+                 
+                 	;Configuración del ADC
+000145 e010      	LDI R17,0x00
+000146 9300 007c 	STS ADMUX,R16
+                 	;Para elegir la referencia:
+                 	;CBI ADMUX,7
+                 	;CBI ADMUX,6
+                 	;Para ajustar a izquierda
+                 	;SBI ADMUX,5
+                 	;Para definir que vamos a usar el ADC0 para tomar la temperatura
+                 	;CBI ADMUX,3 
+                 	;CBI ADMUX,2
+                 	;CBI ADMUX,1
+                 	;CBI ADMUX,0
                  
                  	;configuro el puerto serie
-0000b3 e000      	ldi R16,HIGH(UBRR)
-0000b4 9300 00c5 	sts  UBRR0H,R16
-0000b6 e303      	ldi R16,LOW(UBRR)
-0000b7 9300 00c4 	sts  UBRR0L,R16 ;seteo los baudios
-0000b9 e108      	ldi R16,0x18
-0000ba 9300 00c1 	sts  UCSR0B,R16  ;rx,tx habilitado
-0000bc e806      	ldi R16,0x86
-0000bd 9300 00c2 	sts  UCSR0C,R16 ;8bits, 1 de stop sin pariedad
+000148 e000      	ldi R16,HIGH(UBRR)
+000149 9300 00c5 	sts  UBRR0H,R16
+00014b e303      	ldi R16,LOW(UBRR)
+00014c 9300 00c4 	sts  UBRR0L,R16 ;seteo los baudios
+00014e e108      	ldi R16,0x18
+00014f 9300 00c1 	sts  UCSR0B,R16  ;rx,tx habilitado
+000151 e806      	ldi R16,0x86
+000152 9300 00c2 	sts  UCSR0C,R16 ;8bits, 1 de stop sin pariedad
                  	
-0000bf e000      	ldi R16,0
+000154 e000      	ldi R16,0
                  	;configuro el stack
                  
-0000c0 e008      	LDI R16,HIGH(RAMEND)
-0000c1 bf0e          OUT SPH,R16
-0000c2 ef0f          LDI R16,LOW(RAMEND)
-0000c3 bf0d          OUT SPL,R16
+000155 e008      	LDI R16,HIGH(RAMEND)
+000156 bf0e          OUT SPH,R16
+000157 ef0f          LDI R16,LOW(RAMEND)
+000158 bf0d          OUT SPL,R16
                  
                  	;configuro las interrupciones externas
                  
-0000c4 e103      	LDI R16,0b10011; ptd3 y 4 como entrada
-0000c5 b90a      	OUT DDRD,R16
+000159 e103      	LDI R16,0b10011; ptd3 y 4 como entrada
+00015a b90a      	OUT DDRD,R16
                  	
-0000c6 e005      	LDI R16,5 ;la interrupcion es por cambio de nivel
-0000c7 9300 0069 	sts EICRA,R16
+00015b e005      	LDI R16,5 ;la interrupcion es por cambio de nivel
+00015c 9300 0069 	sts EICRA,R16
                  
-0000c9 e003      	LDI R16,0b11; habilito las interrupciones en las patas 4 y 5
-0000ca bb0d      	OUT EIMSK,R16
+00015e e003      	LDI R16,0b11; habilito las interrupciones en las patas 4 y 5
+00015f bb0d      	OUT EIMSK,R16
                  
                  ;	ldi r16,0
                  	;configuro isp para el rtc
-                 
                  	;LDI R16,1
                  	;STS TWSR,R16
                  
-0000cb 9478      	SEI
                  
-0000cc 9508      
+                 	;activar interrupciones
+000160 9478      	SEI
+000161 9508      
                  /***********************************************************************/					
                  									           
                  PROGRAMA:
                  
-0000cd 940e 00b1 	CALL SETUP
+000162 940e 0144 	CALL SETUP
                  ;	CALL COMUPC
-0000cf df9e      	RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM ;inicializa la tabla
+000164 df90      	RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM ;inicializa la tabla
                  
                  	INICIO_LOOP_SENSADO:
                  
                  	;TEST
-0000d0 b109      		in r16,PIND
-0000d1 0f00      		lsl r16
-0000d2 b90b      		out PORTD,r16
+000165 b109      		in r16,PIND
+000166 0f00      		lsl r16
+000167 b90b      		out PORTD,r16
                  	;TEST
                  
                  		;leer temperatura T
-0000d3 dfa9      		RCALL DAME_TEMPERATURA
+000168 df9b      		RCALL DAME_TEMPERATURA
                  		;Leer fecha y hora
-0000d4 df63      		RCALL DAME_FECHA_HORA
+000169 dece      		RCALL DAME_FECHA_HORA
                  
                  		;almacenar en memoria ram: fecha+hora+temperatura
-0000d5 df73      		RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
+00016a df71      		RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
                  
                  		;si la tabla de temperaturas tiene más de 512 bytes, copiar tabla en SD y luego limpiar RAM
-0000d6 9110 017a 		LDS R17,ocupacion_tabla_temp_ram
-0000d8 3c18      		CPI R17,LIM_MAX_TABLA_TEMPERATURAS
-0000d9 f00a      		BRMI A_DORMIR
+00016b 9110 0176 		LDS R17,ocupacion_tabla_temp_ram
+00016d 331c      		CPI R17,LIM_MAX_TABLA_TEMPERATURAS
+00016e f00a      		BRMI A_DORMIR
                  		;Copiar RAM to SD
-0000da df93      		RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
+00016f df85      		RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
                  
                  		A_DORMIR:
                  			;Dormir por N tiempo
                  
-0000db cff4      		RJMP INICIO_LOOP_SENSADO
+000170 cff4      		RJMP INICIO_LOOP_SENSADO
                  
-0000dc cfff      	END: RJMP END 
+000171 cfff      	END: RJMP END 
                  
                  	.ORG 0x500  ;cambiar pos  ;msj para la pc                    
 000500 2031
@@ -1462,40 +1639,40 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega328" register use summary:
-r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
+r0 :   1 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:  66 r17:  11 r18:  16 r19:   0 r20:   0 r21:   0 r22:   0 r23:   0 
-r24:   0 r25:   0 r26:   2 r27:   2 r28:   0 r29:   0 r30:   4 r31:   4 
-x  :  13 y  :   0 z  :   3 
-Registers used: 9 out of 35 (25.7%)
+r16:  54 r17:  15 r18:   9 r19:   0 r20:   0 r21:  43 r22:   2 r23:   0 
+r24:   0 r25:   0 r26:   7 r27:   5 r28:   0 r29:   0 r30:   4 r31:   4 
+x  :   7 y  :   0 z  :   3 
+Registers used: 12 out of 35 (34.3%)
 
 "ATmega328" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   1 adiw  :   0 and   :   0 
-andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+andi  :   1 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   2 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   1 
-brne  :   6 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :   1 cbi   :   0 cbr   :   0 
+brne  :  10 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  35 cbi   :   1 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   6 cpse  :   0 dec   :   3 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   3 inc   :   0 jmp   :   1 
-ld    :   1 ldd   :   0 ldi   :  41 lds   :  10 lpm   :   1 lsl   :   1 
+cpi   :   9 cpse  :   0 dec   :   4 eor   :   0 fmul  :   1 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   2 inc   :   0 jmp   :   1 
+ld    :   1 ldd   :   0 ldi   :  52 lds   :  26 lpm   :   1 lsl   :   1 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   0 or    :   0 ori   :   0 out   :   7 pop   :   0 
-push  :   0 rcall :  11 ret   :  14 reti  :   3 rjmp  :   6 rol   :   0 
+neg   :   0 nop   :   2 or    :   0 ori   :   0 out   :   6 pop   :   0 
+push  :   0 rcall :  11 ret   :  21 reti  :   3 rjmp  :  12 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
-sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   2 sec   :   0 seh   :   0 
+sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   8 sec   :   0 seh   :   0 
 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :  14 std   :   0 sts   :  14 
+sez   :   0 sleep :   0 spm   :   0 st    :   8 std   :   0 sts   :  21 
 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 23 out of 113 (20.4%)
+Instructions used: 27 out of 113 (23.9%)
 
 "ATmega328" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000a5a    352     90    442   32768   1.3%
-[.dseg] 0x000100 0x000180      0     32     32    2048   1.6%
+[.cseg] 0x000000 0x000a5a    650     90    740   32768   2.3%
+[.dseg] 0x000100 0x00017c      0     28     28    2048   1.4%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
 Assembly complete, 0 errors, 0 warnings
