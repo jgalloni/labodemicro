@@ -1,16 +1,16 @@
 
-AVRASM ver. 2.1.57  C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm Sun Nov 15 20:21:01 2015
+AVRASM ver. 2.1.57  C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm Sun Nov 15 22:56:04 2015
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\m328def.inc'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\M328DEF.INC'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(45): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(46): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(49): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(50): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\copy_ram_to_sd.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(51): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(53): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm'
-C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(54): Including file 'C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\setup.asm'
+C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\M328DEF.INC'
+C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(45): Including file 'C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm'
+C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(46): Including file 'C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm'
+C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(48): Including file 'C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm'
+C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(49): Including file 'C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm'
+C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(50): Including file 'C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\copy_ram_to_sd.asm'
+C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(51): Including file 'C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm'
+C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(53): Including file 'C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm'
+C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(54): Including file 'C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\setup.asm'
                  
                  .INCLUDE "M328DEF.INC"				; Incluye definición archivos 
                  
@@ -1066,13 +1066,13 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(54
                  
                  .CSEG 
                  .ORG 0x00
-000000 c161      RJMP PROGRAMA
+000000 c198      RJMP PROGRAMA
                  
                  ;.ORG INT0addr
                  ;JMP ONOFF
                  
                  .ORG INT0addr
-000002 940c 0128 JMP COMUPC   
+000002 940c 013a JMP COMUPC   
                  
                  
                  .ORG 0x30
@@ -1418,78 +1418,147 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(54
 000114 9105      	LPM R16,Z+
 000115 3000      	cpi  R16,0
 000116 f039      	BREQ ENDSENDDATA
+                 
 000117 9300 00c6 	sts  UDR0,R16
                  WAITSEND:
 000119 9100 00c0 	LDS R16,UCSR0A
-00011b ff06      	sbrs R16,TXC0 ;espera a que termine de mandar el dato
+00011b ff05      	sbrs R16,UDRE0 ;espera a que termine de mandar el dato
 00011c cffc      	rjmp WAITSEND 
 00011d cff6      	rjmp SENDDATA
                  ENDSENDDATA:	
 00011e 9508      	ret
                  
+                 SENDDATAFROMMEM:
+00011f 910d      	LD R16,X+
+000120 3000      	cpi  R16,0
+000121 f039      	BREQ ENDSENDDATA2
+                 
+000122 9300 00c6 	sts  UDR0,R16
+                 WAITSEND2:
+000124 9100 00c0 	LDS R16,UCSR0A
+000126 ff05      	sbrs R16,UDRE0 ;espera a que termine de mandar el dato
+000127 cffc      	rjmp WAITSEND2 
+000128 cff6      	rjmp SENDDATAFROMMEM
+                 ENDSENDDATA2:	
+000129 9508      	ret
+                 
                  ;Z puntero a donde se guarda el dato. Con 0 se termina el dato,R16 q llega
                  RECEIVEDATA:
-00011f 9100 00c0 	LDS R16, UCSR0A
-000121 ff07      	sbrs R16, RXC0 ;espera a que llegue el dato
-000122 cffc      	rjmp RECEIVEDATA
-000123 b105      	in R16,UDRE0
-000124 3000      	cpi R16,0
-000125 f009      	BREQ ENDRECEIVEDATA
-000126 9301      	st Z+,R16
+00012a 9100 00c0 	LDS R16, UCSR0A
+00012c ff07      	sbrs R16, RXC0 ;espera a que llegue el dato
+00012d cffc      	rjmp RECEIVEDATA
+00012e b105      	in R16,UDRE0
+00012f 3000      	cpi R16,0
+000130 f009      	BREQ ENDRECEIVEDATA
+000131 930d      	st X+,R16
                  ENDRECEIVEDATA:
-000127 9508      	ret
+000132 9508      	ret
                  
+                 Getchr: 
+000133 9110 00c0 	lds		R17,UCSR0A 
+000135 ff17      	sbrs	R17,	RXC0
+000136 cffc      	rjmp		Getchr 
+000137 9120 00c6 	lds	R18,	UDR0
+000139 9508      	ret
+                 
+                 	EXT_INT0:
+                 	EXT_INT1:
                  COMUPC:
-000128 e100      	ldi r16,0b10000
-000129 b90b      	out PORTD,r16
-00012a e0e0      	LDI  ZL, LOW(MSJ1<<1)   ;cargo msj
-00012b e0fa      	LDI  ZH, HIGH(MSJ1<<1)
-00012c dfe7      	RCALL SENDDATA
-00012d e7e7      	LDI  ZL, LOW(indata)   ;cargo la posicion donde llega el dato
-00012e e0f1      	LDI  ZH, HIGH(indata)
-00012f dfef      	RCALL RECEIVEDATA
-000130 e7e7      	LDI  ZL, LOW(indata)   ;cargo el primer dato
-000131 e0f1      	LDI  ZH, HIGH(indata)
-000132 8100      	LD R16,Z
-000133 3001      	cpi R16,1 ;si es uno borra la sd
-000134 f409      	BRNE CMPTXDATA
-                 ;	rcall BORRARSD
-000135 9518      	reti ;sale interrupcion
+00013a e100      	ldi r16,0b10000
+00013b b90b      	out PORTD,r16
+00013c e0e0      	LDI  ZL, LOW(MSJ1<<1)   ;cargo msj
+00013d e0fa      	LDI  ZH, HIGH(MSJ1<<1)
+00013e dfd5      	RCALL SENDDATA
+00013f e7a7      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
+000140 e0b1      	LDI  XH, HIGH(indata)
+000141 dff1      	RCALL Getchr
+000142 d02b      	RCALL Putchr
+                 //	LDI  ZL, LOW(indata)   ;cargo el primer dato
+                 //	LDI  ZH, HIGH(indata)
+                 //	LD R16,Z
+000143 3321      	cpi R18,49 ;si es uno borra la sd
+000144 f411      	BRNE CMPTXDATA
+000145 d024      	rcall BORRARSD
+000146 9518      	reti ;sale interrupcion
                  CMPTXDATA:
-000136 3002      	cpi R16,2 ;si transmito lo q hay en la sd
-000137 f411      	BRNE CMPSETHORA
-000138 d009      	rcall TXDATA
-000139 9518      	reti ;sale interrupcion
+000147 3322      	cpi R18,50 ;si transmito lo q hay en la sd
+000148 f411      	BRNE CMPSETHORA
+000149 d01e      	rcall TXDATA
+00014a 9518      	reti ;sale interrupcion
                  CMPSETHORA:
-00013a 3003      	cpi R16,3 ;si es tres, seteo la hora
-00013b f761      	BRNE COMUPC ;si mando mal, vuelve a imprimir el msj
-00013c d001      	rcall SETHORA
-00013d 9518      	reti ;sale interrupcion
+00014b 3323      	cpi R18,51 ;si es tres, seteo la hora
+00014c f769      	BRNE COMUPC ;si mando mal, vuelve a imprimir el msj
+00014d d001      	rcall SETHORA
+00014e 9518      	reti ;sale interrupcion
                  
                  SETHORA:
-00013e e7e7      	LDI  ZL, LOW(indata)   ;cargo la posicion donde llega el dato
-00013f e0f1      	LDI  ZH, HIGH(indata)
-000140 dfde      	RCALL RECEIVEDATA
+00014f e4ea      	LDI  ZL, LOW(MSJ3<<1)   ;cargo msj
+000150 e0fa      	LDI  ZH, HIGH(MSJ3<<1)
+000151 dfc2      	RCALL SENDDATA
+000152 e7a7      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
+000153 e0b1      	LDI  XH, HIGH(indata)
+                 
+000154 dfde      	RCALL Getchr
+000155 932d      	st X+,R18
+000156 dfdc      	RCALL Getchr; hora
+000157 932d      	st X+,R18
+                 
+000158 dfda      	RCALL Getchr
+                 	
+000159 dfd9      	RCALL Getchr ;minutos
+00015a 932d      	st X+,R18
+00015b dfd7      	RCALL Getchr
+00015c 932d      	st X+,R18
+                 
+00015d dfd5      	RCALL Getchr
+                 
+00015e dfd4      	RCALL Getchr ;segundos
+00015f 932d      	st X+,R18
+000160 dfd2      	RCALL Getchr
+000161 932d      	st X+,R18
+                 
+000162 e020      	LDI R18,0
+000163 932d      	st X+,R18
+                 
+000164 e7a7      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
+000165 e0b1      	LDI  XH, HIGH(indata)
+000166 dfb8      	RCALL SENDDATAFROMMEM
+                 
+                 	//RCALL RECEIVEDATA
                  	;guardar la hora donde corresponde
-000141 9508      	ret
+000167 9508      	ret
                  
                  TXDATA:
                  ;	call READSD ;meter esto en un loop hasta que este vacia la sd
-000142 dfd1      	rcall SENDDATA
-000143 9508      	ret	
+000168 dfab      	rcall SENDDATA
+000169 9508      	ret	
                  
+                 BORRARSD:
+00016a e3ee      	LDI  ZL, LOW(MSJ2<<1)   ;cargo msj
+00016b e0fa      	LDI  ZH, HIGH(MSJ2<<1)
+00016c dfa7      	RCALL SENDDATA
+00016d 9508      	ret
                  
+                 Putchr: ; Wait for empty transmit buffer
+00016e 9100 00c0 	LDS		R16,UCSR0A
+000170 ff05      	sbrs	R16,UDRE0
+000171 cffc      	rjmp 	Putchr
+000172 9320 00c6 	sts		UDR0,R18
+                 	WAITPUTCHAR:
+000174 9100 00c0 	LDS		R16,UCSR0A
+000176 ff05      	sbrs	R16,UDRE0
+000177 cffc      	rjmp 	WAITPUTCHAR
                  .include "setup.asm"		;Rutinas configurar el micro
-                 
+000178 9508      
                  	;setea el PORTC.0 como entrada para la lectura de temperaturas
                   	;usa R17
                  	;LDI R17,0x00	;Load 0b00000000 in R17
                  	;OUT DDRC,R16	;Configure PortC as an Input port
-000144 9838      	CBI DDRC,0 ;configura PORTC.0 como Input port
+000179 9838      	CBI DDRC,0 ;configura PORTC.0 como Input port
                  
                  	;Configuración del ADC
-000145 e010      	LDI R17,0x00
-000146 9300 007c 	STS ADMUX,R16
+00017a e010      	LDI R17,0x00
+00017b 9300 007c 	STS ADMUX,R16
                  	;Para elegir la referencia:
                  	;CBI ADMUX,7
                  	;CBI ADMUX,6
@@ -1502,33 +1571,37 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(54
                  	;CBI ADMUX,0
                  
                  	;configuro el puerto serie
-000148 e000      	ldi R16,HIGH(UBRR)
-000149 9300 00c5 	sts  UBRR0H,R16
-00014b e303      	ldi R16,LOW(UBRR)
-00014c 9300 00c4 	sts  UBRR0L,R16 ;seteo los baudios
-00014e e108      	ldi R16,0x18
-00014f 9300 00c1 	sts  UCSR0B,R16  ;rx,tx habilitado
-000151 e806      	ldi R16,0x86
-000152 9300 00c2 	sts  UCSR0C,R16 ;8bits, 1 de stop sin pariedad
+00017d e000      	ldi R16,HIGH(UBRR)
+00017e 9300 00c5 	sts  UBRR0H,R16
+000180 e303      	ldi R16,LOW(UBRR)
+000181 9300 00c4 	sts  UBRR0L,R16 ;seteo los baudios
+000183 e108      	ldi R16,(1<<RXEN0)|(1<<TXEN0)
+000184 9300 00c1 	sts  UCSR0B,R16  ;rx,tx habilitado
+000186 e00e      	ldi R16, (1<<USBS0)|(1<<UCSZ00)|(1<<UCSZ01)
+000187 9300 00c2 	sts  UCSR0C,R16 ;8bits, 1 de stop sin pariedad
                  	
-000154 e000      	ldi R16,0
+000189 e000      	ldi R16,0
                  	;configuro el stack
                  
-000155 e008      	LDI R16,HIGH(RAMEND)
-000156 bf0e          OUT SPH,R16
-000157 ef0f          LDI R16,LOW(RAMEND)
-000158 bf0d          OUT SPL,R16
+00018a e008      	LDI R16,HIGH(RAMEND)
+00018b bf0e          OUT SPH,R16
+00018c ef0f          LDI R16,LOW(RAMEND)
+00018d bf0d          OUT SPL,R16
                  
                  	;configuro las interrupciones externas
                  
-000159 e103      	LDI R16,0b10011; ptd3 y 4 como entrada
-00015a b90a      	OUT DDRD,R16
-                 	
-00015b e005      	LDI R16,5 ;la interrupcion es por cambio de nivel
-00015c 9300 0069 	sts EICRA,R16
+00018e e00c      	LDI R16,0b1100;
+00018f b90b      	OUT PORTD,R16
                  
-00015e e003      	LDI R16,0b11; habilito las interrupciones en las patas 4 y 5
-00015f bb0d      	OUT EIMSK,R16
+000190 e00a      	LDI R16,0b1010  ;la interrupcion es por flanco ascendente
+000191 9300 0069 	STS EICRA,R16
+                 
+000193 e003      	LDI R16,0b11; habilito las interrupciones en las patas 4 y 5
+000194 bb0d      	OUT  EIMSK,R16
+                 
+000195 e003      	ldi R16, 0b11
+000196 bb0c      	OUT EIFR, R16 
+                 
                  
                  ;	ldi r16,0
                  	;configuro isp para el rtc
@@ -1537,45 +1610,39 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(54
                  
                  
                  	;activar interrupciones
-000160 9478      	SEI
-000161 9508      
+000197 9478      	SEI
+000198 9508      
                  /***********************************************************************/					
                  									           
                  PROGRAMA:
                  
-000162 940e 0144 	CALL SETUP
+000199 940e 0179 	CALL SETUP
                  ;	CALL COMUPC
-000164 df90      	RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM ;inicializa la tabla
+00019b df59      	RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM ;inicializa la tabla
                  
                  	INICIO_LOOP_SENSADO:
                  
-                 	;TEST
-000165 b109      		in r16,PIND
-000166 0f00      		lsl r16
-000167 b90b      		out PORTD,r16
-                 	;TEST
-                 
                  		;leer temperatura T
-000168 df9b      		RCALL DAME_TEMPERATURA
+00019c df67      		RCALL DAME_TEMPERATURA
                  		;Leer fecha y hora
-000169 dece      		RCALL DAME_FECHA_HORA
+00019d de9a      		RCALL DAME_FECHA_HORA
                  
                  		;almacenar en memoria ram: fecha+hora+temperatura
-00016a df71      		RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
+00019e df3d      		RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
                  
                  		;si la tabla de temperaturas tiene más de 512 bytes, copiar tabla en SD y luego limpiar RAM
-00016b 9110 0176 		LDS R17,ocupacion_tabla_temp_ram
-00016d 331c      		CPI R17,LIM_MAX_TABLA_TEMPERATURAS
-00016e f00a      		BRMI A_DORMIR
+00019f 9110 0176 		LDS R17,ocupacion_tabla_temp_ram
+0001a1 331c      		CPI R17,LIM_MAX_TABLA_TEMPERATURAS
+0001a2 f00a      		BRMI A_DORMIR
                  		;Copiar RAM to SD
-00016f df85      		RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
+0001a3 df51      		RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
                  
                  		A_DORMIR:
                  			;Dormir por N tiempo
                  
-000170 cff4      		RJMP INICIO_LOOP_SENSADO
+0001a4 cff7      		RJMP INICIO_LOOP_SENSADO
                  
-000171 cfff      	END: RJMP END 
+0001a5 cfff      	END: RJMP END 
                  
                  	.ORG 0x500  ;cambiar pos  ;msj para la pc                    
 000500 2031
@@ -1607,21 +1674,23 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(54
 00051a 7261
 00051b 6820
 00051c 726f
-00051d 0061      MSJ1: .DB "1 para borrar SD,2 para transferir datos,3 para setear hora",0
-00051e 4453
-00051f 6220
-000520 726f
-000521 6172
-000522 6164
-000523 0020      MSJ2: .DB "SD borrada ",0
-000524 6e49
-000525 7267
-000526 7365
-000527 2065
-000528 4848
-000529 4d3a
-00052a 3a4d
-00052b 5353
+00051d 0a61
+C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(89): warning: .cseg .db misalignment - padding zero byte
+00051e 0000      MSJ1: .DB "1 para borrar SD,2 para transferir datos,3 para setear hora",'\n',0
+00051f 4453
+000520 6220
+000521 726f
+000522 6172
+000523 6164
+000524 000a      MSJ2: .DB "SD borrada",'\n',0
+000525 6e49
+000526 7267
+000527 7365
+000528 2065
+000529 4848
+00052a 4d3a
+00052b 3a4d
+00052c 5353
 
 
 RESOURCE USE INFORMATION
@@ -1641,38 +1710,38 @@ counted separately from r26..r31 here.
 "ATmega328" register use summary:
 r0 :   1 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:  54 r17:  15 r18:   9 r19:   0 r20:   0 r21:  43 r22:   2 r23:   0 
-r24:   0 r25:   0 r26:   7 r27:   5 r28:   0 r29:   0 r30:   4 r31:   4 
-x  :   7 y  :   0 z  :   3 
+r16:  58 r17:  17 r18:  22 r19:   0 r20:   0 r21:  43 r22:   2 r23:   0 
+r24:   0 r25:   0 r26:  10 r27:   8 r28:   0 r29:   0 r30:   3 r31:   3 
+x  :  16 y  :   0 z  :   1 
 Registers used: 12 out of 35 (34.3%)
 
 "ATmega328" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   1 adiw  :   0 and   :   0 
 andi  :   1 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
-brcc  :   0 brcs  :   0 break :   0 breq  :   2 brge  :   0 brhc  :   0 
+brcc  :   0 brcs  :   0 break :   0 breq  :   3 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   1 
 brne  :  10 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :  35 cbi   :   1 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   9 cpse  :   0 dec   :   4 eor   :   0 fmul  :   1 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   2 inc   :   0 jmp   :   1 
-ld    :   1 ldd   :   0 ldi   :  52 lds   :  26 lpm   :   1 lsl   :   1 
+cpi   :  10 cpse  :   0 dec   :   4 eor   :   0 fmul  :   1 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   0 jmp   :   1 
+ld    :   1 ldd   :   0 ldi   :  58 lds   :  31 lpm   :   1 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   0 nop   :   2 or    :   0 ori   :   0 out   :   6 pop   :   0 
-push  :   0 rcall :  11 ret   :  21 reti  :   3 rjmp  :  12 rol   :   0 
+push  :   0 rcall :  23 ret   :  25 reti  :   3 rjmp  :  17 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
-sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   8 sec   :   0 seh   :   0 
+sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :  12 sec   :   0 seh   :   0 
 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :   8 std   :   0 sts   :  21 
+sez   :   0 sleep :   0 spm   :   0 st    :  15 std   :   0 sts   :  23 
 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 27 out of 113 (23.9%)
+Instructions used: 26 out of 113 (23.0%)
 
 "ATmega328" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000a5a    650     90    740   32768   2.3%
+[.cseg] 0x000000 0x000a5c    754     92    846   32768   2.6%
 [.dseg] 0x000100 0x00017c      0     28     28    2048   1.4%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
-Assembly complete, 0 errors, 0 warnings
+Assembly complete, 0 errors, 1 warnings

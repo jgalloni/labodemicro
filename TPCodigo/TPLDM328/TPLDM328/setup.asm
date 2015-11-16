@@ -24,9 +24,9 @@ SETUP:
 	sts  UBRR0H,R16
 	ldi R16,LOW(UBRR)
 	sts  UBRR0L,R16 ;seteo los baudios
-	ldi R16,0x18
+	ldi R16,(1<<RXEN0)|(1<<TXEN0)
 	sts  UCSR0B,R16  ;rx,tx habilitado
-	ldi R16,0x86
+	ldi R16, (1<<USBS0)|(1<<UCSZ00)|(1<<UCSZ01)
 	sts  UCSR0C,R16 ;8bits, 1 de stop sin pariedad
 	
 	ldi R16,0
@@ -39,14 +39,18 @@ SETUP:
 
 	;configuro las interrupciones externas
 
-	LDI R16,0b10011; ptd3 y 4 como entrada
-	OUT DDRD,R16
-	
-	LDI R16,5 ;la interrupcion es por cambio de nivel
-	sts EICRA,R16
+	LDI R16,0b1100;
+	OUT PORTD,R16
+
+	LDI R16,0b1010  ;la interrupcion es por flanco ascendente
+	STS EICRA,R16
 
 	LDI R16,0b11; habilito las interrupciones en las patas 4 y 5
-	OUT EIMSK,R16
+	OUT  EIMSK,R16
+
+	ldi R16, 0b11
+	OUT EIFR, R16 
+
 
 ;	ldi r16,0
 	;configuro isp para el rtc
