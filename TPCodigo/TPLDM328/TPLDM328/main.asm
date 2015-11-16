@@ -7,7 +7,7 @@
 .EQU DOS_PUNTOS=':'
 .EQU COMA=','
 .EQU PCOMA=';'
-.EQU LONG_LOG=0x0F;	;es lo que va a medir cada linea del LOG
+.EQU LONG_LOG=0x12;	;es el largo que tendra cada liea que se escriba con la T + Fecha en formato "DDMMAAAAHHMMSTT.T,"
 
 .DSEG
 .org 0x160
@@ -26,7 +26,7 @@
 	set_minutos: .byte 1
 	set_segundos: .byte 1
 	tabla_temperaturas: .byte TAMANIO_TABLA_TEMPERATURA 
-	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar qué tan llena está la ram con datos de tmeperatura
+	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar qué tan llena está la ram con datos de tmeperatura+ fecha
 	indata: .byte 5
 
 .CSEG 

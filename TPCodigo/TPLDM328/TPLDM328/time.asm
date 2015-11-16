@@ -46,6 +46,7 @@ DAME_FECHA_HORA:
 
 	;En este punto, en R27 tenemos el dato leido ¿de la fecha y la hora? 
 	;Faltaría ver bien que es lo que se esta recibiendo
+	;Y luego llenar con info las variables: dia, mes, anio, horas, minutos, segundos
 
 	ERROR_I2C_READ_STATUS:
 		;falta escribir que se hace en caso de error

@@ -44,6 +44,8 @@
 
 	LDI R18,205
 	FMUL R17,R18
+
 	;El resultado del producto está en R1:R0, pero utilizo solo R0 porque las temperaturas son bajas
 	STS temperatura,R0
+
  ret
