@@ -19,6 +19,7 @@
 	anio: .byte 1
 	horas: .byte 1
 	minutos: .byte 1
+	segundos: .byte 1
 	set_dia: .byte 1
 	set_mes: .byte 1
 	set_anio: .byte 1
@@ -86,6 +87,6 @@ PROGRAMA:
 	END: RJMP END 
 
 	.ORG 0x500  ;cambiar pos  ;msj para la pc                    
-MSJ1: .DB "1 para borrar SD,2 para transferir datos,3 para setear hora",'\n',0
+MSJ1: .DB "1 para borrar SD,2 para transferir datos,3 para setear hora ",'\n',0
 MSJ2: .DB "SD borrada",'\n',0
 MSJ3: .DB "Ingrese HH:MM:SS",'\n',0

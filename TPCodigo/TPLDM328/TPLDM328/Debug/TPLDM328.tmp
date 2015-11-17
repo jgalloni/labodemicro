@@ -1,28 +1,28 @@
 <ASSEMBLER_INFO>
  <VERSION>2.1.57</VERSION>
  <DEVICE>"ATmega328"</DEVICE>
- <WORKING_DIR>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\Debug</WORKING_DIR>
+ <WORKING_DIR>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\Debug</WORKING_DIR>
  <INCLUDE_PATH>
   <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc</DIR>
   <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc</DIR>
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</SOURCE_FILE>
+ <SOURCE_FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\m328def.inc</FILE>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\M328DEF.INC</FILE>
-  <FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm</FILE>
-  <FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm</FILE>
-  <FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE>
-  <FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE>
-  <FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\copy_ram_to_sd.asm</FILE>
-  <FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm</FILE>
-  <FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE>
-  <FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\setup.asm</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\copy_ram_to_sd.asm</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\setup.asm</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\Debug\TPLDM328.obj</FILE>
+  <FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\Debug\TPLDM328.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
   <FILE>TPLDM328.hex</FILE>
@@ -32,74 +32,74 @@
   <FILE>TPLDM328.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <temperatura><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>16</LINE></temperatura>
-  <dia><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>17</LINE></dia>
-  <mes><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>18</LINE></mes>
-  <anio><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>19</LINE></anio>
-  <horas><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>20</LINE></horas>
-  <minutos><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>21</LINE></minutos>
-  <set_dia><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>22</LINE></set_dia>
-  <set_mes><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>23</LINE></set_mes>
-  <set_anio><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>24</LINE></set_anio>
-  <set_horas><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>25</LINE></set_horas>
-  <set_minutos><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>26</LINE></set_minutos>
-  <set_segundos><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>27</LINE></set_segundos>
-  <tabla_temperaturas><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>28</LINE></tabla_temperaturas>
-  <ocupacion_tabla_temp_ram><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>29</LINE></ocupacion_tabla_temp_ram>
-  <indata><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>30</LINE></indata>
-  <PROGRAMA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>58</LINE></PROGRAMA>
-  <COMUPC><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>55</LINE></COMUPC>
-  <subrutina_test_m><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm</FILE><LINE>2</LINE></subrutina_test_m>
-  <LOOP><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm</FILE><LINE>5</LINE></LOOP>
-  <subrutina_test_m2><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm</FILE><LINE>9</LINE></subrutina_test_m2>
-  <LOOP2><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm</FILE><LINE>12</LINE></LOOP2>
-  <DAME_FECHA_HORA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>8</LINE></DAME_FECHA_HORA>
-  <I2C_INIT><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>115</LINE></I2C_INIT>
-  <I2C_START><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>130</LINE></I2C_START>
-  <I2C_READ_STATUS><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>169</LINE></I2C_READ_STATUS>
-  <ERROR_I2C_READ_STATUS><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>50</LINE></ERROR_I2C_READ_STATUS>
-  <LOOP_I2C_WRITE><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>23</LINE></LOOP_I2C_WRITE>
-  <LOOP_I2C_READ><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>35</LINE></LOOP_I2C_READ>
-  <I2C_STOP><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>152</LINE></I2C_STOP>
-  <SET_FECHA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>55</LINE></SET_FECHA>
-  <I2C_SEND><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>141</LINE></I2C_SEND>
-  <I2C_DELAY><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>161</LINE></I2C_DELAY>
-  <SET_HORA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>84</LINE></SET_HORA>
-  <LOOP_I2C_START><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>135</LINE></LOOP_I2C_START>
-  <LOOP_I2C_SEND><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>145</LINE></LOOP_I2C_SEND>
-  <LOOP_I2C_STOP><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>155</LINE></LOOP_I2C_STOP>
-  <LOOP_I2C_DELAY><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>163</LINE></LOOP_I2C_DELAY>
-  <ESCRIBIR_FECHA_HORA_TEMP_EN_RAM><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>9</LINE></ESCRIBIR_FECHA_HORA_TEMP_EN_RAM>
-  <BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>48</LINE></BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM>
-  <LOOP_BTFHTER><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>57</LINE></LOOP_BTFHTER>
-  <GET_TABLA_EN_RAM><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>69</LINE></GET_TABLA_EN_RAM>
-  <COPY_FROM_TO><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\copy_ram_to_sd.asm</FILE><LINE>8</LINE></COPY_FROM_TO>
-  <DAME_TEMPERATURA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm</FILE><LINE>8</LINE></DAME_TEMPERATURA>
-  <CAPTURA_TEMPERATURA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm</FILE><LINE>22</LINE></CAPTURA_TEMPERATURA>
-  <SENDDATA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>6</LINE></SENDDATA>
-  <ENDSENDDATA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>17</LINE></ENDSENDDATA>
-  <WAITSEND><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>12</LINE></WAITSEND>
-  <SENDDATAFROMMEM><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>20</LINE></SENDDATAFROMMEM>
-  <ENDSENDDATA2><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>31</LINE></ENDSENDDATA2>
-  <WAITSEND2><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>26</LINE></WAITSEND2>
-  <RECEIVEDATA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>35</LINE></RECEIVEDATA>
-  <ENDRECEIVEDATA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>43</LINE></ENDRECEIVEDATA>
-  <Getchr><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>46</LINE></Getchr>
-  <EXT_INT0><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>53</LINE></EXT_INT0>
-  <EXT_INT1><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>54</LINE></EXT_INT1>
-  <MSJ1><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>89</LINE></MSJ1>
-  <Putchr><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>131</LINE></Putchr>
-  <CMPTXDATA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>72</LINE></CMPTXDATA>
-  <BORRARSD><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>125</LINE></BORRARSD>
-  <CMPSETHORA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>77</LINE></CMPSETHORA>
-  <TXDATA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>120</LINE></TXDATA>
-  <SETHORA><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>83</LINE></SETHORA>
-  <MSJ3><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>91</LINE></MSJ3>
-  <MSJ2><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>90</LINE></MSJ2>
-  <WAITPUTCHAR><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>136</LINE></WAITPUTCHAR>
-  <SETUP><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\setup.asm</FILE><LINE>1</LINE></SETUP>
-  <INICIO_LOOP_SENSADO><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>64</LINE></INICIO_LOOP_SENSADO>
-  <A_DORMIR><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>81</LINE></A_DORMIR>
-  <END><FILE>C:\Users\coco\avr\labodemicro\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>86</LINE></END>
+  <temperatura><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>16</LINE></temperatura>
+  <dia><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>17</LINE></dia>
+  <mes><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>18</LINE></mes>
+  <anio><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>19</LINE></anio>
+  <horas><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>20</LINE></horas>
+  <minutos><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>21</LINE></minutos>
+  <segundos><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>22</LINE></segundos>
+  <set_dia><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>23</LINE></set_dia>
+  <set_mes><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>24</LINE></set_mes>
+  <set_anio><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>25</LINE></set_anio>
+  <set_horas><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>26</LINE></set_horas>
+  <set_minutos><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>27</LINE></set_minutos>
+  <set_segundos><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>28</LINE></set_segundos>
+  <tabla_temperaturas><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>29</LINE></tabla_temperaturas>
+  <ocupacion_tabla_temp_ram><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>30</LINE></ocupacion_tabla_temp_ram>
+  <indata><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>31</LINE></indata>
+  <PROGRAMA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>59</LINE></PROGRAMA>
+  <COMUPC><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>55</LINE></COMUPC>
+  <subrutina_test_m><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm</FILE><LINE>2</LINE></subrutina_test_m>
+  <LOOP><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m1.asm</FILE><LINE>5</LINE></LOOP>
+  <subrutina_test_m2><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm</FILE><LINE>9</LINE></subrutina_test_m2>
+  <LOOP2><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\func_test_m2.asm</FILE><LINE>12</LINE></LOOP2>
+  <DAME_FECHA_HORA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>8</LINE></DAME_FECHA_HORA>
+  <I2C_INIT><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>156</LINE></I2C_INIT>
+  <I2C_START><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>172</LINE></I2C_START>
+  <I2C_READ_STATUS><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>211</LINE></I2C_READ_STATUS>
+  <I2C_SEND><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>183</LINE></I2C_SEND>
+  <DAME_DATO_RTC><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>216</LINE></DAME_DATO_RTC>
+  <I2C_STOP><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>194</LINE></I2C_STOP>
+  <SET_FECHA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>88</LINE></SET_FECHA>
+  <I2C_DELAY><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>203</LINE></I2C_DELAY>
+  <SET_HORA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>125</LINE></SET_HORA>
+  <LOOP_I2C_START><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>177</LINE></LOOP_I2C_START>
+  <LOOP_I2C_SEND><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>187</LINE></LOOP_I2C_SEND>
+  <LOOP_I2C_STOP><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>197</LINE></LOOP_I2C_STOP>
+  <LOOP_I2C_DELAY><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>205</LINE></LOOP_I2C_DELAY>
+  <LOOP_I2C_READ><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\time.asm</FILE><LINE>219</LINE></LOOP_I2C_READ>
+  <ESCRIBIR_FECHA_HORA_TEMP_EN_RAM><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>9</LINE></ESCRIBIR_FECHA_HORA_TEMP_EN_RAM>
+  <BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>46</LINE></BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM>
+  <LOOP_BTFHTER><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>55</LINE></LOOP_BTFHTER>
+  <GET_TABLA_EN_RAM><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\rwd_en_ram.asm</FILE><LINE>67</LINE></GET_TABLA_EN_RAM>
+  <COPY_FROM_TO><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\copy_ram_to_sd.asm</FILE><LINE>8</LINE></COPY_FROM_TO>
+  <DAME_TEMPERATURA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm</FILE><LINE>8</LINE></DAME_TEMPERATURA>
+  <CAPTURA_TEMPERATURA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\temperatura.asm</FILE><LINE>22</LINE></CAPTURA_TEMPERATURA>
+  <SENDDATA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>6</LINE></SENDDATA>
+  <ENDSENDDATA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>17</LINE></ENDSENDDATA>
+  <WAITSEND><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>12</LINE></WAITSEND>
+  <SENDDATAFROMMEM><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>20</LINE></SENDDATAFROMMEM>
+  <ENDSENDDATA2><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>31</LINE></ENDSENDDATA2>
+  <WAITSEND2><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>26</LINE></WAITSEND2>
+  <RECEIVEDATA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>35</LINE></RECEIVEDATA>
+  <ENDRECEIVEDATA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>43</LINE></ENDRECEIVEDATA>
+  <Getchr><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>46</LINE></Getchr>
+  <EXT_INT0><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>53</LINE></EXT_INT0>
+  <EXT_INT1><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>54</LINE></EXT_INT1>
+  <MSJ1><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>90</LINE></MSJ1>
+  <Putchr><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>131</LINE></Putchr>
+  <CMPTXDATA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>72</LINE></CMPTXDATA>
+  <BORRARSD><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>125</LINE></BORRARSD>
+  <CMPSETHORA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>77</LINE></CMPSETHORA>
+  <TXDATA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>120</LINE></TXDATA>
+  <SETHORA><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>83</LINE></SETHORA>
+  <MSJ3><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>92</LINE></MSJ3>
+  <MSJ2><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>91</LINE></MSJ2>
+  <WAITPUTCHAR><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\tx.asm</FILE><LINE>136</LINE></WAITPUTCHAR>
+  <SETUP><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\setup.asm</FILE><LINE>1</LINE></SETUP>
+  <INICIO_LOOP_SENSADO><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>65</LINE></INICIO_LOOP_SENSADO>
+  <A_DORMIR><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>82</LINE></A_DORMIR>
+  <END><FILE>C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm</FILE><LINE>87</LINE></END>
  </LABELS>
 </ASSEMBLER_INFO>
