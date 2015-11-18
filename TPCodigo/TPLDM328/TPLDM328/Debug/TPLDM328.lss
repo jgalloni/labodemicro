@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.57  C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm Tue Nov 17 20:59:47 2015
+AVRASM ver. 2.1.57  C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm Wed Nov 18 16:42:22 2015
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\m328def.inc'
 C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(1): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\avrasm\inc\M328DEF.INC'
@@ -1069,13 +1069,13 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                  
                  .CSEG 
                  .ORG 0x00
-000000 c1db      RJMP PROGRAMA
+000000 c21d      RJMP PROGRAMA
                  
                  ;.ORG INT0addr
                  ;JMP ONOFF
                  
                  .ORG INT0addr
-000002 940c 014d JMP COMUPC   
+000002 940c 018f JMP COMUPC   
                  
                  
                  .ORG 0x30
@@ -1113,8 +1113,10 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                   */ 
                  
                  DAME_FECHA_HORA:
-                 	;utilizaría el RTC parac obtener y cargar la hora en las variables:
+                 	;utilizaría el RTC parac obtener y guardar la info en las variables:
                  	;dia, mes, anio, horas,minutos.
+                 	;El RTC envía datos en formato BCD. Por ejemplo el 50 sería: 0101 0000.
+                 	;El contenido de estas variables se coloca en formato BCD.
                  
                  	;Para leer los datos del RTC  primero debemos escribir en el dispositivo (para setear el Address Pointer del device)
                  	;Luego se le envia un READ para obtener los DATOS en esa address.
@@ -1124,7 +1126,7 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                  	;Master generates Start Condition, status code 0x08 is returned para indicar que la condicion de START se transmitio OK. 
 00003a 940e 00c2 	CALL I2C_START				;transmite la condición de START
 00003c 940e 00e1 	CALL I2C_READ_STATUS		;lee el registro de Status
-00003e 30a8      	CPI R26,0x08				;verifica si se transmitio correctamente el START (0x08 es la respuesta esperada)
+00003e 3078      	CPI R23,0x08				;verifica si se transmitio correctamente el START (0x08 es la respuesta esperada)
                  	;BRNE ERROR_I2C_READ_STATUS	;If error, jump to error function
                  
                  	;Master sends slave bus address (SLA en este caso es 0xd1=0b1100 0001), DS1307 returns ACK
@@ -1137,53 +1139,61 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                  	
 000042 940e 00e5 	CALL DAME_DATO_RTC ;deja el dato en R21
 000044 775f      	ANDI R21,0x7F			;mascara para sacar los 7 LSB de los SEGUNDOS
+                 	;CALL BCD_TO_BIN
 000045 9350 0166 	STS segundos,R21
 000047 2f05      	MOV R16,R21
-000048 940e 0193 	CALL Putchr
+000048 940e 01d5 	CALL Putchr
                  	;CALL I2C_READ_STATUS		;read status register
-                 	;CPI R26,0x50				;was data transmitted, ack received?
+                 	;CPI R23,0x50				;was data transmitted, ack received?
                  	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
                  
 00004a 940e 00e5 	CALL DAME_DATO_RTC ;deja el dato en R21
-00004c 77bf      	ANDI R27,0x7F			;mascara para sacar los 7 LSB de los MINUTOS
-00004d 93b0 0165 	STS minutos,R27
+00004c 775f      	ANDI R21,0x7F			;mascara para sacar los 7 LSB de los MINUTOS
+                 	;CALL BCD_TO_BIN	
+00004d 9350 0165 	STS minutos,R21
                  	;CALL I2C_READ_STATUS		;read status register
-                 	;CPI R26,0x50				;was data transmitted, ack received?
+                 	;CPI R23,0x50				;was data transmitted, ack received?
                  	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
                  	
 00004f 940e 00e5 	CALL DAME_DATO_RTC ;deja el dato en R21
-000051 73bf      	ANDI R27,0x3F			;mascara para sacar los 6 LSB de la HORA
-000052 93b0 0164 	STS horas,R27
+                 	;CALL BCD_TO_BIN
+000051 735f      	ANDI R21,0x3F			;mascara para sacar los 6 LSB de la HORA
+000052 9350 0164 	STS horas,R21
                  	;CALL I2C_READ_STATUS		;read status register
-                 	;CPI R26,0x50				;was data transmitted, ack received?
+                 	;CPI R23,0x50				;was data transmitted, ack received?
                  	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
                  
 000054 940e 00e5 	CALL DAME_DATO_RTC ;deja el dato en R21
-                 	;ANDI R27,0x03			;mascara para sacar los 3 LSB del numero de dia de la semana
-                 	;STS dia_de_la_semana,R27
+                 	;Este dato se obtiene  pero se ignora ya que el Nro de dia de la semana es algo que no utilizamos
+                 	;ANDI R21,0x03			;mascara para sacar los 3 LSB del numero de dia de la semana
+                 	;CALL BCD_TO_BIN
+                 	;STS dia_de_la_semana,R21
                  	;CALL I2C_READ_STATUS		;read status register
-                 	;CPI R26,0x50				;was data transmitted, ack received?
+                 	;CPI R23,0x50				;was data transmitted, ack received?
                  	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
                  
 000056 940e 00e5 	CALL DAME_DATO_RTC ;deja el dato en R21
-000058 73bf      	ANDI R27,0x3F			;mascara para sacar los 6 LSB del numero de dia en el mes
-000059 93b0 0161 	STS dia,R27
+000058 735f      	ANDI R21,0x3F			;mascara para sacar los 6 LSB del numero de dia en el mes
+                 	;CALL BCD_TO_BIN	
+000059 9350 0161 	STS dia,R21
                  	;CALL I2C_READ_STATUS		;read status register
-                 	;CPI R26,0x50				;was data transmitted, ack received?
+                 	;CPI R23,0x50				;was data transmitted, ack received?
                  	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
                  
 00005b 940e 00e5 	CALL DAME_DATO_RTC ;deja el dato en R21
-00005d 71bf      	ANDI R27,0x1F			;mascara para sacar los 5 LSB del numero de mes
-00005e 93b0 0162 	STS mes,R27
+00005d 715f      	ANDI R21,0x1F			;mascara para sacar los 5 LSB del numero de mes
+                 	;CALL BCD_TO_BIN	
+00005e 9350 0162 	STS mes,R21
                  	;CALL I2C_READ_STATUS		;read status register
-                 	;CPI R26,0x50				;was data transmitted, ack received?
+                 	;CPI R23,0x50				;was data transmitted, ack received?
                  	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
                  
 000060 940e 00e5 	CALL DAME_DATO_RTC ;deja el dato en R21
-000062 7fbf      	ANDI R27,0xFF			;mascara para sacar los 8 bits del numero de anio
-000063 93b0 0163 	STS anio,R27
+000062 7f5f      	ANDI R21,0xFF			;mascara para sacar los 8 bits del numero de anio
+                 	;CALL BCD_TO_BIN
+000063 9350 0163 	STS anio,R21
                  	;CALL I2C_READ_STATUS		;read status register
-                 	;CPI R26,0x50				;was data transmitted, ack received?
+                 	;CPI R23,0x50				;was data transmitted, ack received?
                  	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
                  	
                  	;Master sends Stop condition, no status code returned
@@ -1318,8 +1328,8 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
 0000e0 9508      RET
                  
                  I2C_READ_STATUS:
-0000e1 91a0 00b9 	LDS R26,TWSR				;Read status register into r21
-0000e3 7fa8      	ANDI R26,0xf8				;mask the prescaler bits
+0000e1 9170 00b9 	LDS R23,TWSR				;Read status register into r21
+0000e3 7f78      	ANDI R23,0xf8				;mask the prescaler bits
 0000e4 9508      RET
                  
                  DAME_DATO_RTC:
@@ -1330,8 +1340,20 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
 0000ea ff57      		SBRS R21,TWINT		;skip next line if TWINT is 1
 0000eb cffc      		RJMP LOOP_I2C_READ
 0000ec 9150 00bb 	LDS R21,TWDR			;Se lee el dato que nos envio el slave y se lo guarda en r21
+0000ee 9508      RET
+                 
+                 ;BCD_TO_BIN:
+                 ;	MOV R23,R21
+                 ;	LSL R23
+                 ;	LSL R23
+                 ;	LSL R23
+                 ;	LSL R23
+                 ;	ANDI R23,0x0f
+                 ;	MUL R23,10
+                 ;	ANDI R21,0x0f
+                 ;	ADD R21,R27
                  .include "rwd_en_ram.asm"		;Rutinas para escribir, leer y borrar datos de la ram
-0000ee 9508      
+                 
                   * datos_en_ram.asm
                   *
                   *  Created: 20/10/2015 09:49:00 a.m.
@@ -1340,66 +1362,125 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                  
                  
                  ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
-                 	;recibe el parametro de la fecha 
-                 	;lo escribe en la posicion de ram que se le indique en formato DDMMAAAA
-                 	;Al final de la fecha, coloca una coma
-0000ef 9100 0161 	LDS R16,dia           
-0000f1 930d          ST   X+,R16
-                 
-0000f2 9100 0162 	LDS R16,mes           
-0000f4 930d          ST   X+,R16	               
-                 
-0000f5 9100 0163 	LDS R16,anio           
-0000f7 930d          ST   X+,R16
-                 
-                 	;recibe el parametro de la hora
-                 	; lo escribe en la posicion de la ram que se le indique en formato HHMM
-                 	; Al final de la hora, coloca una coma
+                 	;recibe el parametro de la fecha y lo escribe en la posicion de ram que se le indique en formato DDMMAAHHMM
+                 	;Lueogo de la fecha coloca una "coma" para indicar el fin de linea
                  	
-0000f8 9100 0164 	LDS R16,horas           
-0000fa 930d          ST   X+,R16
+0000ef 9100 0161 	LDS R16,dia ;Se guarda en R16 un DATO de dos digito sen formato BCD
+0000f1 2f10      	MOV R17,R16 
+0000f2 0f11      	LSL R17
+0000f3 0f11      	LSL R17
+0000f4 0f11      	LSL R17
+0000f5 0f11      	LSL R17
+0000f6 701f      	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+0000f7 700f      	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+0000f8 931d      	ST X+,R17            
+0000f9 930d          ST X+,R16
                  
-0000fb 9100 0165 	LDS R16,minutos
-0000fd 930d      	ST	X+,R16
+0000fa 9100 0162 	LDS R16,mes  ;Se guarda en R16 un DATO de dos digito sen formato BCD
+0000fc 2f10      	MOV R17,R16 
+0000fd 0f11      	LSL R17
+0000fe 0f11      	LSL R17
+0000ff 0f11      	LSL R17
+000100 0f11      	LSL R17
+000101 701f      	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+000102 700f      	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+000103 931d      	ST X+,R17            
+000104 930d          ST X+,R16
                  
-                 	;Recibe el parametro de la temperatura
-                 	;lo escribe en la posicion de la ram que se le indique, usando 5 caracteres:
-                 	; +02.8
-                 	; -10.4
-0000fe 9100 0160 	LDS R16,temperatura           
-000100 930d          ST   X+,R16
+000105 9100 0163 	LDS R16,anio ;Se guarda en R16 un DATO de dos digito sen formato BCD
+000107 2f10      	MOV R17,R16 
+000108 0f11      	LSL R17
+000109 0f11      	LSL R17
+00010a 0f11      	LSL R17
+00010b 0f11      	LSL R17
+00010c 701f      	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+00010d 700f      	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+00010e 931d      	ST X+,R17            
+00010f 930d          ST X+,R16
                  
-000101 9100 046a 	LDS R16,ocupacion_tabla_temp_ram	;actualizamos el valor de Ocupacion_tabla_temperaturas_en_ram
-000103 e110      	LDI R17,LONG_LOG
-000104 0f01      	ADD R16,R17							;para ello lo que hacemos es sumar el nuevo largo de los datos copiados
-000105 9300 046a 	STS ocupacion_tabla_temp_ram,R16
+                 	; A continuacion se escribe el parametro de la hora
+                 	; Lo escribe en la posicion de la ram que se le indique en formato HHMM	
+                 	
+000110 9100 0164 	LDS R16,horas ;Se guarda en R16 un DATO de dos digito sen formato BCD
+000112 2f10      	MOV R17,R16 
+000113 0f11      	LSL R17
+000114 0f11      	LSL R17
+000115 0f11      	LSL R17
+000116 0f11      	LSL R17
+000117 701f      	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+000118 700f      	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+000119 931d      	ST X+,R17            
+00011a 930d          ST X+,R16
                  
-000107 9508      ret
+00011b 9100 0165 	LDS R16,minutos ;Se guarda en R16 un DATO de dos digito sen formato BCD
+00011d 2f10      	MOV R17,R16 
+00011e 0f11      	LSL R17
+00011f 0f11      	LSL R17
+000120 0f11      	LSL R17
+000121 0f11      	LSL R17
+000122 701f      	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+000123 700f      	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+000124 931d      	ST X+,R17            
+000125 930d          ST X+,R16
+                 
+                 	;Se escribe el parametro de la temperatura
+                 	;REVISAR como se escribe la temperatura
+000126 9100 0160 	LDS R16,temperatura           
+000128 930d          ST   X+,R16
+                 
+                 	;Por ultimo coloca un caracter "coma" para indicar el fin de linea
+000129 e20c      	LDI R16,','
+00012a 930d      	ST X+,R16
+                 
+00012b 9100 046a 	LDS R16,ocupacion_tabla_temp_ram	;actualizamos el valor de Ocupacion_tabla_temperaturas_en_ram
+00012d e110      	LDI R17,LONG_LOG
+00012e 0f01      	ADD R16,R17							;para ello lo que hacemos es sumar el nuevo largo de los datos copiados
+00012f 9300 046a 	STS ocupacion_tabla_temp_ram,R16
+000131 9508      ret
                  
                  BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM:	
                  	;llenar tabla con ceros y volver puntero al inicio
                  	;Usa R17 y R18
                  
-000108 ef1f      	LDI R17,TAMANIO_TABLA_TEMPERATURA ;Contador
-000109 e6ad      	LDI XL,LOW(tabla_temperaturas)
-00010a e0b1      	LDI XH,HIGH(tabla_temperaturas)
-00010b e020      	LDI R18,0x00
+000132 ef1f      	LDI R17,TAMANIO_TABLA_TEMPERATURA ;Contador
+000133 e6ad      	LDI XL,LOW(tabla_temperaturas)
+000134 e0b1      	LDI XH,HIGH(tabla_temperaturas)
+000135 e020      	LDI R18,0x00 ;Valor para rellenar los campos de la tabla
                  
                  	LOOP_BTFHTER:
-00010c 932d      		ST X+,R18
-00010d 951a      		DEC R17
-00010e f7e9      		BRNE LOOP_BTFHTER
+000136 932d      		ST X+,R18
+000137 951a      		DEC R17
+000138 f7e9      		BRNE LOOP_BTFHTER
                  
-00010f e6ad      		LDI XL,LOW(tabla_temperaturas)
-000110 e0b1      		LDI XH,HIGH(tabla_temperaturas)
+000139 e6ad      		LDI XL,LOW(tabla_temperaturas)
+00013a e0b1      		LDI XH,HIGH(tabla_temperaturas)
                  
-000111 e010      		LDI R17,0
-000112 9310 046a 		STS ocupacion_tabla_temp_ram,R17 ;marcamos como "0" el nivel de ocupación de la tabla
-000114 9508      ret
+00013b e010      		LDI R17,0
+00013c 9310 046a 		STS ocupacion_tabla_temp_ram,R17 ;marcamos como "0" el nivel de ocupación de la tabla
+00013e 9508      ret
                  
                  GET_TABLA_EN_RAM:
-                 	;entregaria un punturo al inicio de la tabla, y la longitud de la misma
-000115 9508      ret
+                 	;Carga en el puntero Y inicio de la tabla donde se guardan las fechas y la temperatura
+00013f e6cd      	LDI YL,LOW(tabla_temperaturas)
+000140 e0d1      	LDI YH,HIGH(tabla_temperaturas)
+000141 9508      ret
+                 
+                 RELLENAR_TABLA_CON_CEROS_EN_RAM:
+                 	;llenar el final de la tabla con ceros
+                 	;Usa R17 y R18 y el puntero X
+                 
+000142 e020      	LDI R18,0x00 ;Valor para rellenar los campos de la tabla
+000143 9110 046a 	LDS R17,ocupacion_tabla_temp_ram
+000145 ef0f      	LDI R16,TAMANIO_TABLA_TEMPERATURA
+                 
+                 	LOOP_BTCCER:
+000146 932d      		ST X+,R18
+000147 9513      		INC R17
+000148 1710      		CP R17,R16
+000149 f3e0      		BRLO LOOP_BTCCER
+                 
+00014a 9310 046a 		STS ocupacion_tabla_temp_ram,R17 ;actualizamos el nivel de ocupación de la tabla
+00014c 9508      ret
                  .include "copy_ram_to_sd.asm"	;Rutinas para copiar datos de la RAM a la SD
                  
                   * copy_ram_to_sd.asm
@@ -1413,7 +1494,7 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                  ;independientemente de donde a donde sea
                  ;Tal vez se usaria para copiar datos de la RAM a la SD, y luego para copiar de la SD a la PC
                  .include "temperatura.asm"		;Rutinas para leer la medicion del sensor de temperatura
-000116 9508      
+00014d 9508      
                   * temperatura.asm
                   *
                   *  Created: 20/10/2015 10:26:21 a.m.
@@ -1424,25 +1505,25 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                  ; Lee el valor de la tension ingresada por el puerto conectado al sensor
                  ; Convierte el valor leido a grados celsius
                  ; Guarda la temperatura medida en la variable "temperatura"
-                 ; Usa r17 y r18
+                 ; Usa R16, R17, R18
                  	
                  	;Activamos el ADC
-000117 ec17      	LDI R17,0b11000111 ;enable, start conversion y set prescaler
+00014e ec17      	LDI R17,0b11000111 ;enable, start conversion y set prescaler
                  						;el prescaler quedo en 111 (128) para que 20Mhz/128 caiga 
                  						;dentro del rango de 50khz a 200khz)
-000118 9310 007a 	STS ADCSRA,R17
+00014f 9310 007a 	STS ADCSRA,R17
                  
                  	;Toma dato de temperatura del ADC
                  	;Para eso miramos que el ADC haya terminado de procesar la informacion verificando el estatus del flag 4 de ADCSRA.
                  	CAPTURA_TEMPERATURA:
-00011a 9110 007a 		LDS R17,ADCSRA
-00011c ff14      		SBRS R17,4			;saltea la siguiente instruccion si el bit 4 del registro esta en 1
-00011d cffc      		RJMP CAPTURA_TEMPERATURA
+000151 9110 007a 		LDS R17,ADCSRA
+000153 ff14      		SBRS R17,4			;saltea la siguiente instruccion si el bit 4 del registro esta en 1
+000154 cffc      		RJMP CAPTURA_TEMPERATURA
                  
                  	;Si se llega a este punto, es porque el ADC ya termino la conversion a digital
                  
-00011e 9110 0078 	LDS R17,ADCL
-000120 9120 0079 	LDS R18,ADCH
+000155 9110 0078 	LDS R17,ADCL
+000157 9120 0079 	LDS R18,ADCH
                  	;Notar que no usaremos el ADCH pues no vamos a tener temperaturas tan altas
                  	
                  	;Notar que la resolucion del ADC es de 10 bits y como alimentamos con 5V 
@@ -1457,13 +1538,39 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                  	;La conversión a °C entonces seria:
                  	;°C = [Vin*(1024)]/[5v] = Vin *  205
                  
-000122 ec2d      	LDI R18,205
-000123 031a      	FMUL R17,R18
+000159 ec2d      	LDI R18,205
+00015a 031a      	FMUL R17,R18
                  
                  	;El resultado del producto está en R1:R0, pero utilizo solo R0 porque las temperaturas son bajas
-000124 9200 0160 	STS temperatura,R0
+00015b 2d00      	MOV R16,R0
                  
-000126 9508      
+                 	;A continuacion se realiza la conversion de la temperatura en R16, de numero binario a BCD
+00015c 940e 0161 	CALL BIN_TO_BCD
+                 
+00015e 9300 0160 	STS temperatura,R16
+000160 9508       ret
+                 
+                 
+                 BIN_TO_BCD: 
+                 	;En R16 viene  el dato a convertir
+                 	;Se usan los registros R17 y R18
+                 	;En nuestro caso tendremos temperaturas menores a 100 grados celsius, 
+                 	;con lo cual vamos a convertir numeros menores a 100.
+                 
+000161 e010      	LDI R17,0 ;decenas
+                 
+                 	BIN_MAYOR_A_DIEZ:
+000162 300a      		CPI R16,10 ;si es mayor a diez, aumentar contador de decenas y restar 10 al numero binario
+000163 f018      		BRLO BIN_MAYOR_A_UNO
+000164 500a      		subi R16,10
+000165 9513      		inc R17
+000166 cffb      		RJMP BIN_MAYOR_A_DIEZ
+                 
+                 	BIN_MAYOR_A_UNO:
+                 	;En este punto, en R17 esta la cantidad de decenas y en R16 la cantidad de unidades.
+                 	;Finalmente, se unen ambas partes en un solo valor BCD 
+000167 0f01      	ADD R16,R17
+000168 9508      
                  .include "tx.asm"			;Rutinas transmitir datos a la pc
                  
                  .EQU XTALFREQ=8000000 
@@ -1471,202 +1578,202 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                  
                  ;Z puntero al dato ,R16 char a mandar
                  SENDDATA:
-000127 9105      	LPM R16,Z+
-000128 3000      	cpi  R16,0
-000129 f039      	BREQ ENDSENDDATA
+000169 9105      	LPM R16,Z+
+00016a 3000      	cpi  R16,0
+00016b f039      	BREQ ENDSENDDATA
                  
-00012a 9300 00c6 	sts  UDR0,R16
+00016c 9300 00c6 	sts  UDR0,R16
                  WAITSEND:
-00012c 9100 00c0 	LDS R16,UCSR0A
-00012e ff05      	sbrs R16,UDRE0 ;espera a que termine de mandar el dato
-00012f cffc      	rjmp WAITSEND 
-000130 cff6      	rjmp SENDDATA
+00016e 9100 00c0 	LDS R16,UCSR0A
+000170 ff05      	sbrs R16,UDRE0 ;espera a que termine de mandar el dato
+000171 cffc      	rjmp WAITSEND 
+000172 cff6      	rjmp SENDDATA
                  ENDSENDDATA:	
-000131 9508      	ret
+000173 9508      	ret
                  
                  SENDDATAFROMMEM:
-000132 910d      	LD R16,X+
-000133 3000      	cpi  R16,0
-000134 f039      	BREQ ENDSENDDATA2
+000174 910d      	LD R16,X+
+000175 3000      	cpi  R16,0
+000176 f039      	BREQ ENDSENDDATA2
                  
-000135 9300 00c6 	sts  UDR0,R16
+000177 9300 00c6 	sts  UDR0,R16
                  WAITSEND2:
-000137 9100 00c0 	LDS R16,UCSR0A
-000139 ff05      	sbrs R16,UDRE0 ;espera a que termine de mandar el dato
-00013a cffc      	rjmp WAITSEND2 
-00013b cff6      	rjmp SENDDATAFROMMEM
+000179 9100 00c0 	LDS R16,UCSR0A
+00017b ff05      	sbrs R16,UDRE0 ;espera a que termine de mandar el dato
+00017c cffc      	rjmp WAITSEND2 
+00017d cff6      	rjmp SENDDATAFROMMEM
                  ENDSENDDATA2:	
-00013c 9508      	ret
+00017e 9508      	ret
                  
                  ;Z puntero a donde se guarda el dato. Con 0 se termina el dato,R16 q llega
                  RECEIVEDATA:
-00013d 9100 00c0 	LDS R16, UCSR0A
-00013f ff07      	sbrs R16, RXC0 ;espera a que llegue el dato
-000140 cffc      	rjmp RECEIVEDATA
-000141 b105      	in R16,UDRE0
-000142 3000      	cpi R16,0
-000143 f009      	BREQ ENDRECEIVEDATA
-000144 930d      	st X+,R16
+00017f 9100 00c0 	LDS R16, UCSR0A
+000181 ff07      	sbrs R16, RXC0 ;espera a que llegue el dato
+000182 cffc      	rjmp RECEIVEDATA
+000183 b105      	in R16,UDRE0
+000184 3000      	cpi R16,0
+000185 f009      	BREQ ENDRECEIVEDATA
+000186 930d      	st X+,R16
                  ENDRECEIVEDATA:
-000145 9508      	ret
+000187 9508      	ret
                  
                  Getchr: 
-000146 9110 00c0 	lds		R17,UCSR0A 
-000148 ff17      	sbrs	R17,	RXC0
-000149 cffc      	rjmp		Getchr 
-00014a 9120 00c6 	lds	R18,	UDR0
-00014c 9508      	ret
+000188 9110 00c0 	lds		R17,UCSR0A 
+00018a ff17      	sbrs	R17,	RXC0
+00018b cffc      	rjmp		Getchr 
+00018c 9120 00c6 	lds	R18,	UDR0
+00018e 9508      	ret
                  
                  	EXT_INT0:
                  	EXT_INT1:
                  COMUPC:
-00014d e100      	ldi r16,0b10000
-00014e b90b      	out PORTD,r16
-00014f e0e0      	LDI  ZL, LOW(MSJ1<<1)   ;cargo msj
-000150 e0fa      	LDI  ZH, HIGH(MSJ1<<1)
-000151 dfd5      	RCALL SENDDATA
-000152 e6ab      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
-000153 e0b4      	LDI  XH, HIGH(indata)
-000154 dff1      	RCALL Getchr
-000155 d03d      	RCALL Putchr
+00018f e100      	ldi r16,0b10000
+000190 b90b      	out PORTD,r16
+000191 e0e0      	LDI  ZL, LOW(MSJ1<<1)   ;cargo msj
+000192 e0fa      	LDI  ZH, HIGH(MSJ1<<1)
+000193 dfd5      	RCALL SENDDATA
+000194 e6ab      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
+000195 e0b4      	LDI  XH, HIGH(indata)
+000196 dff1      	RCALL Getchr
+000197 d03d      	RCALL Putchr
                  //	LDI  ZL, LOW(indata)   ;cargo el primer dato
                  //	LDI  ZH, HIGH(indata)
                  //	LD R16,Z
-000156 3321      	cpi R18,49 ;si es uno borra la sd
-000157 f411      	BRNE CMPTXDATA
-000158 d036      	rcall BORRARSD
-000159 9518      	reti ;sale interrupcion
+000198 3321      	cpi R18,49 ;si es uno borra la sd
+000199 f411      	BRNE CMPTXDATA
+00019a d036      	rcall BORRARSD
+00019b 9518      	reti ;sale interrupcion
                  CMPTXDATA:
-00015a 3322      	cpi R18,50 ;si transmito lo q hay en la sd
-00015b f411      	BRNE CMPSETHORA
-00015c d030      	rcall TXDATA
-00015d 9518      	reti ;sale interrupcion
+00019c 3322      	cpi R18,50 ;si transmito lo q hay en la sd
+00019d f411      	BRNE CMPSETHORA
+00019e d030      	rcall TXDATA
+00019f 9518      	reti ;sale interrupcion
                  CMPSETHORA:
-00015e 3323      	cpi R18,51 ;si es tres, seteo la hora
-00015f f769      	BRNE COMUPC ;si mando mal, vuelve a imprimir el msj
-000160 d001      	rcall SETHORA
-000161 9518      	reti ;sale interrupcion
+0001a0 3323      	cpi R18,51 ;si es tres, seteo la hora
+0001a1 f769      	BRNE COMUPC ;si mando mal, vuelve a imprimir el msj
+0001a2 d001      	rcall SETHORA
+0001a3 9518      	reti ;sale interrupcion
                  
                  SETHORA:
-000162 e4ea      	LDI  ZL, LOW(MSJ3<<1)   ;cargo msj
-000163 e0fa      	LDI  ZH, HIGH(MSJ3<<1)
-000164 dfc2      	RCALL SENDDATA
-000165 e6ab      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
-000166 e0b4      	LDI  XH, HIGH(indata)
+0001a4 e4ea      	LDI  ZL, LOW(MSJ3<<1)   ;cargo msj
+0001a5 e0fa      	LDI  ZH, HIGH(MSJ3<<1)
+0001a6 dfc2      	RCALL SENDDATA
+0001a7 e6ab      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
+0001a8 e0b4      	LDI  XH, HIGH(indata)
                  
-000167 dfde      	RCALL Getchr
-000168 932d      	st X+,R18
-000169 dfdc      	RCALL Getchr; dia
-00016a 932d      	st X+,R18
+0001a9 dfde      	RCALL Getchr
+0001aa 932d      	st X+,R18
+0001ab dfdc      	RCALL Getchr; dia
+0001ac 932d      	st X+,R18
                  
-00016b dfda      	RCALL Getchr
+0001ad dfda      	RCALL Getchr
                  	
-00016c dfd9      	RCALL Getchr ;mes
-00016d 932d      	st X+,R18
-00016e dfd7      	RCALL Getchr
-00016f 932d      	st X+,R18
+0001ae dfd9      	RCALL Getchr ;mes
+0001af 932d      	st X+,R18
+0001b0 dfd7      	RCALL Getchr
+0001b1 932d      	st X+,R18
                  
-000170 dfd5      	RCALL Getchr
+0001b2 dfd5      	RCALL Getchr
                  
-000171 dfd4      	RCALL Getchr ;año
-000172 932d      	st X+,R18
-000173 dfd2      	RCALL Getchr
-000174 932d      	st X+,R18
+0001b3 dfd4      	RCALL Getchr ;año
+0001b4 932d      	st X+,R18
+0001b5 dfd2      	RCALL Getchr
+0001b6 932d      	st X+,R18
                  
-000175 dfd0      	RCALL Getchr
+0001b7 dfd0      	RCALL Getchr
                  
-000176 dfcf      	RCALL Getchr
-000177 932d      	st X+,R18
-000178 dfcd      	RCALL Getchr; hora
-000179 932d      	st X+,R18
+0001b8 dfcf      	RCALL Getchr
+0001b9 932d      	st X+,R18
+0001ba dfcd      	RCALL Getchr; hora
+0001bb 932d      	st X+,R18
                  
-00017a dfcb      	RCALL Getchr
+0001bc dfcb      	RCALL Getchr
                  	
-00017b dfca      	RCALL Getchr ;minutos
-00017c 932d      	st X+,R18
-00017d dfc8      	RCALL Getchr
-00017e 932d      	st X+,R18
+0001bd dfca      	RCALL Getchr ;minutos
+0001be 932d      	st X+,R18
+0001bf dfc8      	RCALL Getchr
+0001c0 932d      	st X+,R18
                  
-00017f dfc6      	RCALL Getchr
+0001c1 dfc6      	RCALL Getchr
                  
-000180 dfc5      	RCALL Getchr ;segundos
-000181 932d      	st X+,R18
-000182 dfc3      	RCALL Getchr
-000183 932d      	st X+,R18
+0001c2 dfc5      	RCALL Getchr ;segundos
+0001c3 932d      	st X+,R18
+0001c4 dfc3      	RCALL Getchr
+0001c5 932d      	st X+,R18
                  
-000184 e020      	LDI R18,0
-000185 932d      	st X+,R18
+0001c6 e020      	LDI R18,0
+0001c7 932d      	st X+,R18
                  
-000186 e6ab      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
-000187 e0b4      	LDI  XH, HIGH(indata)
-000188 dfa9      	RCALL SENDDATAFROMMEM
+0001c8 e6ab      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
+0001c9 e0b4      	LDI  XH, HIGH(indata)
+0001ca dfa9      	RCALL SENDDATAFROMMEM
                  
                  	//RCALL RECEIVEDATA
-000189 e6ab      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
-00018a e0b4      	LDI  XH, HIGH(indata)
-00018b d01d      	RCALL FORMAT_IN_DATE;guardar la fecha
-00018c 9508      	ret
+0001cb e6ab      	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
+0001cc e0b4      	LDI  XH, HIGH(indata)
+0001cd d01d      	RCALL FORMAT_IN_DATE;guardar la fecha
+0001ce 9508      	ret
                  
                  TXDATA:
                  ;	call READSD ;meter esto en un loop hasta que este vacia la sd
-00018d df99      	rcall SENDDATA
-00018e 9508      	ret	
+0001cf df99      	rcall SENDDATA
+0001d0 9508      	ret	
                  
                  BORRARSD:
-00018f e3ee      	LDI  ZL, LOW(MSJ2<<1)   ;cargo msj
-000190 e0fa      	LDI  ZH, HIGH(MSJ2<<1)
-000191 df95      	RCALL SENDDATA
-000192 9508      	ret
+0001d1 e3ee      	LDI  ZL, LOW(MSJ2<<1)   ;cargo msj
+0001d2 e0fa      	LDI  ZH, HIGH(MSJ2<<1)
+0001d3 df95      	RCALL SENDDATA
+0001d4 9508      	ret
                  
                  Putchr: ; Wait for empty transmit buffer
-000193 9100 00c0 	LDS		R16,UCSR0A
-000195 ff05      	sbrs	R16,UDRE0
-000196 cffc      	rjmp 	Putchr
-000197 9320 00c6 	sts		UDR0,R18
+0001d5 9100 00c0 	LDS		R16,UCSR0A
+0001d7 ff05      	sbrs	R16,UDRE0
+0001d8 cffc      	rjmp 	Putchr
+0001d9 9320 00c6 	sts		UDR0,R18
                  	WAITPUTCHAR:
-000199 9100 00c0 	LDS		R16,UCSR0A
-00019b ff05      	sbrs	R16,UDRE0
-00019c cffc      	rjmp 	WAITPUTCHAR
-00019d 9508      	ret ; Put data from (r16)
+0001db 9100 00c0 	LDS		R16,UCSR0A
+0001dd ff05      	sbrs	R16,UDRE0
+0001de cffc      	rjmp 	WAITPUTCHAR
+0001df 9508      	ret ; Put data from (r16)
                  	
                  
                  ASCII_TO_BIN:
-00019e 910d      	LD R16,X+
-00019f 5300      	SUBI R16,48
-0001a0 0f00      	LSL R16
-0001a1 0f00      	LSL R16
-0001a2 0f00      	LSL R16
-0001a3 0f00      	LSL R16
-0001a4 2f10      	MOV R17,R16
-0001a5 910d      	LD R16,X+
-0001a6 5300      	SUBI R16,48
-0001a7 0f01      	ADD R16,R17
-0001a8 9508      RET
+0001e0 910d      	LD R16,X+
+0001e1 5300      	SUBI R16,48
+0001e2 0f00      	LSL R16
+0001e3 0f00      	LSL R16
+0001e4 0f00      	LSL R16
+0001e5 0f00      	LSL R16
+0001e6 2f10      	MOV R17,R16
+0001e7 910d      	LD R16,X+
+0001e8 5300      	SUBI R16,48
+0001e9 0f01      	ADD R16,R17
+0001ea 9508      RET
                  
                  FORMAT_IN_DATE:
-0001a9 dff4      	RCALL ASCII_TO_BIN
-0001aa 9300 0167 	STS set_dia,R16
-0001ac dff1      	RCALL ASCII_TO_BIN
-0001ad 9300 0168 	STS set_mes,R16
-0001af dfee      	RCALL ASCII_TO_BIN
-0001b0 9300 0169 	STS set_anio,R16
-0001b2 dfeb      	RCALL ASCII_TO_BIN
-0001b3 9300 016a 	STS set_horas,R16
-0001b5 dfe8      	RCALL ASCII_TO_BIN
-0001b6 9300 016b 	STS set_minutos,R16
-0001b8 dfe5      	RCALL ASCII_TO_BIN
-0001b9 9300 016c 	STS set_segundos,R16
+0001eb dff4      	RCALL ASCII_TO_BIN
+0001ec 9300 0167 	STS set_dia,R16
+0001ee dff1      	RCALL ASCII_TO_BIN
+0001ef 9300 0168 	STS set_mes,R16
+0001f1 dfee      	RCALL ASCII_TO_BIN
+0001f2 9300 0169 	STS set_anio,R16
+0001f4 dfeb      	RCALL ASCII_TO_BIN
+0001f5 9300 016a 	STS set_horas,R16
+0001f7 dfe8      	RCALL ASCII_TO_BIN
+0001f8 9300 016b 	STS set_minutos,R16
+0001fa dfe5      	RCALL ASCII_TO_BIN
+0001fb 9300 016c 	STS set_segundos,R16
                  .include "setup.asm"		;Rutinas configurar el micro
-0001bb 9508      
+0001fd 9508      
                  	;setea el PORTC.0 como entrada para la lectura de temperaturas
                   	;usa R17
                  	;LDI R17,0x00	;Load 0b00000000 in R17
                  	;OUT DDRC,R16	;Configure PortC as an Input port
-0001bc 9838      	CBI DDRC,0 ;configura PORTC.0 como Input port
+0001fe 9838      	CBI DDRC,0 ;configura PORTC.0 como Input port
                  
                  	;Configuración del ADC
-0001bd e010      	LDI R17,0x00
-0001be 9300 007c 	STS ADMUX,R16
+0001ff e010      	LDI R17,0x00
+000200 9300 007c 	STS ADMUX,R16
                  	;Para elegir la referencia:
                  	;CBI ADMUX,7
                  	;CBI ADMUX,6
@@ -1679,36 +1786,36 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                  	;CBI ADMUX,0
                  
                  	;configuro el puerto serie
-0001c0 e000      	ldi R16,HIGH(UBRR)
-0001c1 9300 00c5 	sts  UBRR0H,R16
-0001c3 e303      	ldi R16,LOW(UBRR)
-0001c4 9300 00c4 	sts  UBRR0L,R16 ;seteo los baudios
-0001c6 e108      	ldi R16,(1<<RXEN0)|(1<<TXEN0)
-0001c7 9300 00c1 	sts  UCSR0B,R16  ;rx,tx habilitado
-0001c9 e00e      	ldi R16, (1<<USBS0)|(1<<UCSZ00)|(1<<UCSZ01)
-0001ca 9300 00c2 	sts  UCSR0C,R16 ;8bits, 1 de stop sin pariedad
+000202 e000      	ldi R16,HIGH(UBRR)
+000203 9300 00c5 	sts  UBRR0H,R16
+000205 e303      	ldi R16,LOW(UBRR)
+000206 9300 00c4 	sts  UBRR0L,R16 ;seteo los baudios
+000208 e108      	ldi R16,(1<<RXEN0)|(1<<TXEN0)
+000209 9300 00c1 	sts  UCSR0B,R16  ;rx,tx habilitado
+00020b e00e      	ldi R16, (1<<USBS0)|(1<<UCSZ00)|(1<<UCSZ01)
+00020c 9300 00c2 	sts  UCSR0C,R16 ;8bits, 1 de stop sin pariedad
                  	
-0001cc e000      	ldi R16,0
+00020e e000      	ldi R16,0
                  	;configuro el stack
                  
-0001cd e008      	LDI R16,HIGH(RAMEND)
-0001ce bf0e          OUT SPH,R16
-0001cf ef0f          LDI R16,LOW(RAMEND)
-0001d0 bf0d          OUT SPL,R16
+00020f e008      	LDI R16,HIGH(RAMEND)
+000210 bf0e          OUT SPH,R16
+000211 ef0f          LDI R16,LOW(RAMEND)
+000212 bf0d          OUT SPL,R16
                  
                  	;configuro las interrupciones externas
                  
-0001d1 e00c      	LDI R16,0b1100;
-0001d2 b90b      	OUT PORTD,R16
+000213 e00c      	LDI R16,0b1100;
+000214 b90b      	OUT PORTD,R16
                  
-0001d3 e00a      	LDI R16,0b1010  ;la interrupcion es por flanco ascendente
-0001d4 9300 0069 	STS EICRA,R16
+000215 e00a      	LDI R16,0b1010  ;la interrupcion es por flanco ascendente
+000216 9300 0069 	STS EICRA,R16
                  
-0001d6 e003      	LDI R16,0b11; habilito las interrupciones en las patas 4 y 5
-0001d7 bb0d      	OUT  EIMSK,R16
+000218 e003      	LDI R16,0b11; habilito las interrupciones en las patas 4 y 5
+000219 bb0d      	OUT  EIMSK,R16
                  
-0001d8 e003      	ldi R16, 0b11
-0001d9 bb0c      	OUT EIFR, R16 
+00021a e003      	ldi R16, 0b11
+00021b bb0c      	OUT EIFR, R16 
                  
                  
                  ;	ldi r16,0
@@ -1718,39 +1825,39 @@ C:\Users\mtomas\Desktop\TpLDM\labodemicro\TPCodigo\TPLDM328\TPLDM328\main.asm(57
                  
                  
                  	;activar interrupciones
-0001da 9478      	SEI
-0001db 9508      
+00021c 9478      	SEI
+00021d 9508      
                  /***********************************************************************/					
                  									           
                  PROGRAMA:
                  
-0001dc 940e 01bc 	CALL SETUP
+00021e 940e 01fe 	CALL SETUP
                  ;	CALL COMUPC
-0001de df29      	RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM ;inicializa la tabla
+000220 df11      	RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM ;inicializa la tabla
                  
                  	INICIO_LOOP_SENSADO:
                  
                  		;leer temperatura T
-0001df df37      		RCALL DAME_TEMPERATURA
+000221 df2c      		RCALL DAME_TEMPERATURA
                  		;Leer fecha y hora
-0001e0 de57      		RCALL DAME_FECHA_HORA
+000222 de15      		RCALL DAME_FECHA_HORA
                  		
                  		;almacenar en memoria ram: fecha+hora+temperatura
-0001e1 df0d      		RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
+000223 decb      		RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
                  
                  		;si la tabla de temperaturas tiene más de 512 bytes, copiar tabla en SD y luego limpiar RAM
-0001e2 9110 046a 		LDS R17,ocupacion_tabla_temp_ram
-0001e4 331c      		CPI R17,LIM_MAX_TABLA_TEMPERATURAS
-0001e5 f00a      		BRMI A_DORMIR
+000224 9110 046a 		LDS R17,ocupacion_tabla_temp_ram
+000226 331c      		CPI R17,LIM_MAX_TABLA_TEMPERATURAS
+000227 f00a      		BRMI A_DORMIR
                  		;Copiar RAM to SD
-0001e6 df21      		RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
+000228 df09      		RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
                  
                  		A_DORMIR:
                  			;Dormir por N tiempo
                  
-0001e7 cff7      		RJMP INICIO_LOOP_SENSADO
+000229 cff7      		RJMP INICIO_LOOP_SENSADO
                  
-0001e8 cfff      	END: RJMP END 
+00022a cfff      	END: RJMP END 
                  
                  	.ORG 0x500  ;cambiar pos  ;msj para la pc                    
 000500 2031
@@ -1822,37 +1929,37 @@ counted separately from r26..r31 here.
 "ATmega328" register use summary:
 r0 :   1 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:  75 r17:  19 r18:  28 r19:   0 r20:   0 r21:  44 r22:   2 r23:   0 
-r24:   0 r25:   0 r26:   9 r27:  16 r28:   0 r29:   0 r30:   3 r31:   3 
-x  :  24 y  :   0 z  :   1 
-Registers used: 12 out of 35 (34.3%)
+r16:  94 r17:  61 r18:  30 r19:   0 r20:   0 r21:  54 r22:   2 r23:   3 
+r24:   0 r25:   0 r26:   6 r27:   6 r28:   1 r29:   1 r30:   3 r31:   3 
+x  :  31 y  :   0 z  :   1 
+Registers used: 15 out of 35 (42.9%)
 
 "ATmega328" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   0 add   :   2 adiw  :   0 and   :   0 
-andi  :   7 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
+.lds  :   0 .sts  :   0 adc   :   0 add   :   3 adiw  :   0 and   :   0 
+andi  :  17 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   3 brge  :   0 brhc  :   0 
-brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   1 
+brhs  :   0 brid  :   0 brie  :   0 brlo  :   2 brlt  :   0 brmi  :   1 
 brne  :   7 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :  42 cbi   :   1 cbr   :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  43 cbi   :   1 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   8 cpse  :   0 dec   :   4 eor   :   0 fmul  :   1 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   0 jmp   :   1 
-ld    :   3 ldd   :   0 ldi   :  59 lds   :  30 lpm   :   1 lsl   :   4 
-lsr   :   0 mov   :   2 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   1 cpc   :   0 
+cpi   :   9 cpse  :   0 dec   :   4 eor   :   0 fmul  :   1 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   2 jmp   :   1 
+ld    :   3 ldd   :   0 ldi   :  65 lds   :  31 lpm   :   1 lsl   :  24 
+lsr   :   0 mov   :   8 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   0 nop   :   1 or    :   0 ori   :   0 out   :   6 pop   :   0 
-push  :   0 rcall :  39 ret   :  28 reti  :   3 rjmp  :  16 rol   :   0 
+push  :   0 rcall :  39 ret   :  30 reti  :   3 rjmp  :  17 rol   :   0 
 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 sbis  :   0 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :  11 sec   :   0 seh   :   0 
 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
-sez   :   0 sleep :   0 spm   :   0 st    :  21 std   :   0 sts   :  33 
-sub   :   0 subi  :   2 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 29 out of 113 (25.7%)
+sez   :   0 sleep :   0 spm   :   0 st    :  28 std   :   0 sts   :  34 
+sub   :   0 subi  :   3 swap  :   0 tst   :   0 wdr   :   0 
+Instructions used: 32 out of 113 (28.3%)
 
 "ATmega328" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000a66    888    102    990   32768   3.0%
+[.cseg] 0x000000 0x000a66   1020    102   1122   32768   3.4%
 [.dseg] 0x000100 0x000470      0    784    784    2048  38.3%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 

@@ -6,8 +6,10 @@
  */ 
 
 DAME_FECHA_HORA:
-	;utilizaría el RTC parac obtener y cargar la hora en las variables:
+	;utilizaría el RTC parac obtener y guardar la info en las variables:
 	;dia, mes, anio, horas,minutos.
+	;El RTC envía datos en formato BCD. Por ejemplo el 50 sería: 0101 0000.
+	;El contenido de estas variables se coloca en formato BCD.
 
 	;Para leer los datos del RTC  primero debemos escribir en el dispositivo (para setear el Address Pointer del device)
 	;Luego se le envia un READ para obtener los DATOS en esa address.
@@ -17,7 +19,7 @@ DAME_FECHA_HORA:
 	;Master generates Start Condition, status code 0x08 is returned para indicar que la condicion de START se transmitio OK. 
 	CALL I2C_START				;transmite la condición de START
 	CALL I2C_READ_STATUS		;lee el registro de Status
-	CPI R26,0x08				;verifica si se transmitio correctamente el START (0x08 es la respuesta esperada)
+	CPI R23,0x08				;verifica si se transmitio correctamente el START (0x08 es la respuesta esperada)
 	;BRNE ERROR_I2C_READ_STATUS	;If error, jump to error function
 
 	;Master sends slave bus address (SLA en este caso es 0xd1=0b1100 0001), DS1307 returns ACK
@@ -30,53 +32,61 @@ DAME_FECHA_HORA:
 	
 	CALL DAME_DATO_RTC ;deja el dato en R21
 	ANDI R21,0x7F			;mascara para sacar los 7 LSB de los SEGUNDOS
+	;CALL BCD_TO_BIN
 	STS segundos,R21
 	MOV R16,R21
 	CALL Putchr
 	;CALL I2C_READ_STATUS		;read status register
-	;CPI R26,0x50				;was data transmitted, ack received?
+	;CPI R23,0x50				;was data transmitted, ack received?
 	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
 
 	CALL DAME_DATO_RTC ;deja el dato en R21
-	ANDI R27,0x7F			;mascara para sacar los 7 LSB de los MINUTOS
-	STS minutos,R27
+	ANDI R21,0x7F			;mascara para sacar los 7 LSB de los MINUTOS
+	;CALL BCD_TO_BIN	
+	STS minutos,R21
 	;CALL I2C_READ_STATUS		;read status register
-	;CPI R26,0x50				;was data transmitted, ack received?
+	;CPI R23,0x50				;was data transmitted, ack received?
 	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
 	
 	CALL DAME_DATO_RTC ;deja el dato en R21
-	ANDI R27,0x3F			;mascara para sacar los 6 LSB de la HORA
-	STS horas,R27
+	;CALL BCD_TO_BIN
+	ANDI R21,0x3F			;mascara para sacar los 6 LSB de la HORA
+	STS horas,R21
 	;CALL I2C_READ_STATUS		;read status register
-	;CPI R26,0x50				;was data transmitted, ack received?
+	;CPI R23,0x50				;was data transmitted, ack received?
 	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
 
 	CALL DAME_DATO_RTC ;deja el dato en R21
-	;ANDI R27,0x03			;mascara para sacar los 3 LSB del numero de dia de la semana
-	;STS dia_de_la_semana,R27
+	;Este dato se obtiene  pero se ignora ya que el Nro de dia de la semana es algo que no utilizamos
+	;ANDI R21,0x03			;mascara para sacar los 3 LSB del numero de dia de la semana
+	;CALL BCD_TO_BIN
+	;STS dia_de_la_semana,R21
 	;CALL I2C_READ_STATUS		;read status register
-	;CPI R26,0x50				;was data transmitted, ack received?
+	;CPI R23,0x50				;was data transmitted, ack received?
 	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
 
 	CALL DAME_DATO_RTC ;deja el dato en R21
-	ANDI R27,0x3F			;mascara para sacar los 6 LSB del numero de dia en el mes
-	STS dia,R27
+	ANDI R21,0x3F			;mascara para sacar los 6 LSB del numero de dia en el mes
+	;CALL BCD_TO_BIN	
+	STS dia,R21
 	;CALL I2C_READ_STATUS		;read status register
-	;CPI R26,0x50				;was data transmitted, ack received?
+	;CPI R23,0x50				;was data transmitted, ack received?
 	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
 
 	CALL DAME_DATO_RTC ;deja el dato en R21
-	ANDI R27,0x1F			;mascara para sacar los 5 LSB del numero de mes
-	STS mes,R27
+	ANDI R21,0x1F			;mascara para sacar los 5 LSB del numero de mes
+	;CALL BCD_TO_BIN	
+	STS mes,R21
 	;CALL I2C_READ_STATUS		;read status register
-	;CPI R26,0x50				;was data transmitted, ack received?
+	;CPI R23,0x50				;was data transmitted, ack received?
 	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
 
 	CALL DAME_DATO_RTC ;deja el dato en R21
-	ANDI R27,0xFF			;mascara para sacar los 8 bits del numero de anio
-	STS anio,R27
+	ANDI R21,0xFF			;mascara para sacar los 8 bits del numero de anio
+	;CALL BCD_TO_BIN
+	STS anio,R21
 	;CALL I2C_READ_STATUS		;read status register
-	;CPI R26,0x50				;was data transmitted, ack received?
+	;CPI R23,0x50				;was data transmitted, ack received?
 	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
 	
 	;Master sends Stop condition, no status code returned
@@ -211,8 +221,8 @@ LOOP_I2C_DELAY:
 RET
 
 I2C_READ_STATUS:
-	LDS R26,TWSR				;Read status register into r21
-	ANDI R26,0xf8				;mask the prescaler bits
+	LDS R23,TWSR				;Read status register into r21
+	ANDI R23,0xf8				;mask the prescaler bits
 RET
 
 DAME_DATO_RTC:
@@ -224,3 +234,15 @@ DAME_DATO_RTC:
 		RJMP LOOP_I2C_READ
 	LDS R21,TWDR			;Se lee el dato que nos envio el slave y se lo guarda en r21
 RET
+
+;BCD_TO_BIN:
+;	MOV R23,R21
+;	LSL R23
+;	LSL R23
+;	LSL R23
+;	LSL R23
+;	ANDI R23,0x0f
+;	MUL R23,10
+;	ANDI R21,0x0f
+;	ADD R21,R27
+;ret

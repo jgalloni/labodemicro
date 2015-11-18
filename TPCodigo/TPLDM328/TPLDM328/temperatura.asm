@@ -9,7 +9,7 @@
 ; Lee el valor de la tension ingresada por el puerto conectado al sensor
 ; Convierte el valor leido a grados celsius
 ; Guarda la temperatura medida en la variable "temperatura"
-; Usa r17 y r18
+; Usa R16, R17, R18
 	
 	;Activamos el ADC
 	LDI R17,0b11000111 ;enable, start conversion y set prescaler
@@ -46,6 +46,32 @@
 	FMUL R17,R18
 
 	;El resultado del producto está en R1:R0, pero utilizo solo R0 porque las temperaturas son bajas
-	STS temperatura,R0
+	MOV R16,R0
 
+	;A continuacion se realiza la conversion de la temperatura en R16, de numero binario a BCD
+	CALL BIN_TO_BCD
+
+	STS temperatura,R16
  ret
+
+
+BIN_TO_BCD: 
+	;En R16 viene  el dato a convertir
+	;Se usan los registros R17 y R18
+	;En nuestro caso tendremos temperaturas menores a 100 grados celsius, 
+	;con lo cual vamos a convertir numeros menores a 100.
+
+	LDI R17,0 ;decenas
+
+	BIN_MAYOR_A_DIEZ:
+		CPI R16,10 ;si es mayor a diez, aumentar contador de decenas y restar 10 al numero binario
+		BRLO BIN_MAYOR_A_UNO
+		subi R16,10
+		inc R17
+		RJMP BIN_MAYOR_A_DIEZ
+
+	BIN_MAYOR_A_UNO:
+	;En este punto, en R17 esta la cantidad de decenas y en R16 la cantidad de unidades.
+	;Finalmente, se unen ambas partes en un solo valor BCD 
+	ADD R16,R17
+ret
