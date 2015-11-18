@@ -89,6 +89,27 @@ SETHORA:
 
 	RCALL Getchr
 	st X+,R18
+	RCALL Getchr; dia
+	st X+,R18
+
+	RCALL Getchr
+	
+	RCALL Getchr ;mes
+	st X+,R18
+	RCALL Getchr
+	st X+,R18
+
+	RCALL Getchr
+
+	RCALL Getchr ;año
+	st X+,R18
+	RCALL Getchr
+	st X+,R18
+
+	RCALL Getchr
+
+	RCALL Getchr
+	st X+,R18
 	RCALL Getchr; hora
 	st X+,R18
 
@@ -114,7 +135,9 @@ SETHORA:
 	RCALL SENDDATAFROMMEM
 
 	//RCALL RECEIVEDATA
-	;guardar la hora donde corresponde
+	LDI  XL, LOW(indata)   ;cargo la posicion donde llega el dato
+	LDI  XH, HIGH(indata)
+	RCALL FORMAT_IN_DATE;guardar la fecha
 	ret
 
 TXDATA:
@@ -137,4 +160,33 @@ Putchr: ; Wait for empty transmit buffer
 	LDS		R16,UCSR0A
 	sbrs	R16,UDRE0
 	rjmp 	WAITPUTCHAR
-	ret ; Put data from (r16) 
+	ret ; Put data from (r16)
+	
+
+ASCII_TO_BIN:
+	LD R16,X+
+	SUBI R16,48
+	LSL R16
+	LSL R16
+	LSL R16
+	LSL R16
+	MOV R17,R16
+	LD R16,X+
+	SUBI R16,48
+	ADD R16,R17
+RET
+
+FORMAT_IN_DATE:
+	RCALL ASCII_TO_BIN
+	STS set_dia,R16
+	RCALL ASCII_TO_BIN
+	STS set_mes,R16
+	RCALL ASCII_TO_BIN
+	STS set_anio,R16
+	RCALL ASCII_TO_BIN
+	STS set_horas,R16
+	RCALL ASCII_TO_BIN
+	STS set_minutos,R16
+	RCALL ASCII_TO_BIN
+	STS set_segundos,R16
+RET	 

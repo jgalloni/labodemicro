@@ -31,6 +31,8 @@ DAME_FECHA_HORA:
 	CALL DAME_DATO_RTC ;deja el dato en R21
 	ANDI R21,0x7F			;mascara para sacar los 7 LSB de los SEGUNDOS
 	STS segundos,R21
+	MOV R16,R21
+	CALL Putchr
 	;CALL I2C_READ_STATUS		;read status register
 	;CPI R26,0x50				;was data transmitted, ack received?
 	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function
@@ -220,5 +222,5 @@ DAME_DATO_RTC:
 		LDS R21,TWCR		;read control registre into r21
 		SBRS R21,TWINT		;skip next line if TWINT is 1
 		RJMP LOOP_I2C_READ
-	LDS R21,TWDR			;Se lee el dato (segundos) que nos envio el slave y se lo guarda en r21
+	LDS R21,TWDR			;Se lee el dato que nos envio el slave y se lo guarda en r21
 RET

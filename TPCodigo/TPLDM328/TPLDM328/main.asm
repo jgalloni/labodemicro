@@ -1,13 +1,13 @@
 .INCLUDE "M328DEF.INC"				; Incluye definición archivos 
 
 .EQU LIM_MAX_TABLA_TEMPERATURAS=60	;Max tamaño esperable en tabla en RAM
-.EQU TAMANIO_TABLA_TEMPERATURA=10	;bytes para llenar con lineas tipo DDMMAAAAHHMMTTTTT, 
+.EQU TAMANIO_TABLA_TEMPERATURA=255	;bytes para llenar con lineas tipo DDMMAAHHMMTTTTT, 
 .EQU TAMANIO_TEXTO_TEMPERATURA=1	;bytes
-.EQU BARRA='/'
-.EQU DOS_PUNTOS=':'
-.EQU COMA=','
-.EQU PCOMA=';'
-.EQU LONG_LOG=0x12;	;es el largo que tendra cada liea que se escriba con la T + Fecha en formato "DDMMAAAAHHMMSTT.T,"
+;.EQU BARRA='/'
+;.EQU DOS_PUNTOS=':'
+;.EQU COMA=','
+;.EQU PCOMA=';'
+.EQU LONG_LOG=0x10;	;es el largo que tendra cada liea que se escriba con la T + Fecha en formato "DDMMAAHHMMSTT.T,"
 
 .DSEG
 .org 0x160
@@ -26,7 +26,9 @@
 	set_horas: .byte 1
 	set_minutos: .byte 1
 	set_segundos: .byte 1
-	tabla_temperaturas: .byte TAMANIO_TABLA_TEMPERATURA 
+	tabla_temperaturas: .byte TAMANIO_TABLA_TEMPERATURA
+	tabla_temperaturas_1: .byte TAMANIO_TABLA_TEMPERATURA
+	tabla_temperaturas_2: .byte TAMANIO_TABLA_TEMPERATURA	 
 	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar qué tan llena está la ram con datos de tmeperatura+ fecha
 	indata: .byte 5
 
@@ -68,7 +70,7 @@ PROGRAMA:
 		RCALL DAME_TEMPERATURA
 		;Leer fecha y hora
 		RCALL DAME_FECHA_HORA
-
+		
 		;almacenar en memoria ram: fecha+hora+temperatura
 		RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
 
@@ -89,4 +91,4 @@ PROGRAMA:
 	.ORG 0x500  ;cambiar pos  ;msj para la pc                    
 MSJ1: .DB "1 para borrar SD,2 para transferir datos,3 para setear hora ",'\n',0
 MSJ2: .DB "SD borrada",'\n',0
-MSJ3: .DB "Ingrese HH:MM:SS",'\n',0
+MSJ3: .DB "Ingrese DD/MM/AA HH:MM:SS ",'\n',0
