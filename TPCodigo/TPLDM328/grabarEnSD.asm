@@ -13,6 +13,10 @@
 
 .EQU BAUDRATE = 51
 
+;CANTIDAD_DE_REGISTROS_A_LEER representa la cantidad total de registros que tienen
+;que copiarse a la SD
+.EQU CANTIDAD_DE_REGISTROS_A_LEER = 56
+
 .ORG 0
 	JMP PROGRAMA
 
@@ -48,14 +52,16 @@ PROGRAMA:
 	;Para enviar informacion a mediante Protocolo Serie se pone la informacion en el registro UDR
 
 
+LDI R30, CANTIDAD_DE_REGISTROS_A_LEER
 COPIAR_A_SD:
 	SBIS UCSRA,UDRE	;verifica si esta vacio UDR. 
 	RJMP REPETIR
 
 	LDI R16, PUNTERO_DEL_REGISTRO_DONDE_ESTA_LA_INFORMACION+	
 	OUT UDR,R16
-	RJMP COPIAR_A_SD
 
+	DEC R30
+	BRNQ COPIAR_A_SD
+	
 FIN:
 	RJMP FIN
-	
