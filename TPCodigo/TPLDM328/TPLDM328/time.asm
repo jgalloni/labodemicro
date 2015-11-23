@@ -35,7 +35,6 @@ DAME_FECHA_HORA:
 	;CALL BCD_TO_BIN
 	STS segundos,R21
 	MOV R16,R21
-	CALL Putchr
 	;CALL I2C_READ_STATUS		;read status register
 	;CPI R23,0x50				;was data transmitted, ack received?
 	;BRNE ERROR_I2C_READ_STATUS	;if error, jump to error function

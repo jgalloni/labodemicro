@@ -36,8 +36,8 @@
 .ORG 0x00
 RJMP PROGRAMA
 
-;.ORG INT0addr
-;JMP ONOFF
+.ORG INT1addr
+JMP WAKEUP
 
 .ORG INT0addr
 JMP COMUPC   
@@ -65,7 +65,7 @@ PROGRAMA:
 	RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM ;inicializa la tabla
 
 	INICIO_LOOP_SENSADO:
-
+		CLI
 		;leer temperatura T
 		RCALL DAME_TEMPERATURA
 		;Leer fecha y hora
@@ -82,11 +82,16 @@ PROGRAMA:
 		RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
 
 		A_DORMIR:
+			SEI
 			;Dormir por N tiempo
+			sleep
 
 		RJMP INICIO_LOOP_SENSADO
 
 	END: RJMP END 
+
+
+	WAKEUP: RETI
 
 	.ORG 0x500  ;cambiar pos  ;msj para la pc                    
 MSJ1: .DB "1 para borrar SD,2 para transferir datos,3 para setear hora ",'\n',0

@@ -53,6 +53,7 @@ Getchr:
 	EXT_INT0:
 	EXT_INT1:
 COMUPC:
+	CLI
 	ldi r16,0b10000
 	out PORTD,r16
 	LDI  ZL, LOW(MSJ1<<1)   ;cargo msj
@@ -68,16 +69,19 @@ COMUPC:
 	cpi R18,49 ;si es uno borra la sd
 	BRNE CMPTXDATA
 	rcall BORRARSD
+	SEI
 	reti ;sale interrupcion
 CMPTXDATA:
 	cpi R18,50 ;si transmito lo q hay en la sd
 	BRNE CMPSETHORA
 	rcall TXDATA
+	SEI
 	reti ;sale interrupcion
 CMPSETHORA:
 	cpi R18,51 ;si es tres, seteo la hora
 	BRNE COMUPC ;si mando mal, vuelve a imprimir el msj
 	rcall SETHORA
+	SEI
 	reti ;sale interrupcion
 
 SETHORA:
