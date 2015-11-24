@@ -1,6 +1,6 @@
-.INCLUDE "M328DEF.INC"				; Incluye definiciÛn archivos 
+.INCLUDE "M328DEF.INC"				; Incluye definici√≥n archivos 
 
-.EQU LIM_MAX_TABLA_TEMPERATURAS=60	;Max tamaÒo esperable en tabla en RAM
+.EQU LIM_MAX_TABLA_TEMPERATURAS=60	;Max tama√±o esperable en tabla en RAM
 .EQU TAMANIO_TABLA_TEMPERATURA=255	;bytes para llenar con lineas tipo DDMMAAHHMMTTTTT, 
 .EQU TAMANIO_TEXTO_TEMPERATURA=1	;bytes
 ;.EQU BARRA='/'
@@ -29,7 +29,7 @@
 	tabla_temperaturas: .byte TAMANIO_TABLA_TEMPERATURA
 	tabla_temperaturas_1: .byte TAMANIO_TABLA_TEMPERATURA
 	tabla_temperaturas_2: .byte TAMANIO_TABLA_TEMPERATURA	 
-	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar quÈ tan llena est· la ram con datos de tmeperatura+ fecha
+	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar qu√© tan llena est√° la ram con datos de tmeperatura+ fecha
 	indata: .byte 5
 
 .CSEG 
@@ -51,6 +51,7 @@ JMP COMUPC
 .include "time.asm"				;Rutinas para obtener fecha y hora
 .include "rwd_en_ram.asm"		;Rutinas para escribir, leer y borrar datos de la ram
 .include "copy_ram_to_sd.asm"	;Rutinas para copiar datos de la RAM a la SD
+.include "copy_sd_to_ram.asm" 	;Rutina para copiar de la SD a la RAM
 .include "temperatura.asm"		;Rutinas para leer la medicion del sensor de temperatura
 
 .include "tx.asm"			;Rutinas transmitir datos a la pc
@@ -74,7 +75,7 @@ PROGRAMA:
 		;almacenar en memoria ram: fecha+hora+temperatura
 		RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
 
-		;si la tabla de temperaturas tiene m·s de 512 bytes, copiar tabla en SD y luego limpiar RAM
+		;si la tabla de temperaturas tiene m√°s de 512 bytes, copiar tabla en SD y luego limpiar RAM
 		LDS R17,ocupacion_tabla_temp_ram
 		CPI R17,LIM_MAX_TABLA_TEMPERATURAS
 		BRMI A_DORMIR
