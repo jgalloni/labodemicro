@@ -174,7 +174,7 @@ I2C_INIT:
 	; SCL Frecuency = CPU_CLOCK_frec / (16+2*TWBR*(4^prescaler))
 	LDI R21,0			
 	STS TWSR,R21		;set prescaler bits to zero
-	LDI R21,0x32		;move 0x32 into r21
+	LDI R21,0x32		;move 0x32 into r21 真真真真真真真ACA NO ES 32 EN DECIMAL?????????
 	STS TWBR,R21		;SCL freq is 100k for micro de 8Mhz
 	LDI R21,(1<<TWEN)	;move 0x04 into r21
 	STS TWCR,R21		;enable the TWI

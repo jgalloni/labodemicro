@@ -12,20 +12,23 @@
 ; Usa R16, R17, R18
 	
 	;Activamos el ADC
-	LDI R17,0b11000111 ;enable, start conversion y set prescaler
+	;LDI R17,0b11000111 ;enable, start conversion y set prescaler
 						;el prescaler quedo en 111 (128) para que 20Mhz/128 caiga 
 						;dentro del rango de 50khz a 200khz)
-	STS ADCSRA,R17
+	;STS ADCSRA,R17
 
 	;Toma dato de temperatura del ADC
 	;Para eso miramos que el ADC haya terminado de procesar la informacion verificando el estatus del flag 4 de ADCSRA.
+	ldS R17, ADCSRA    
+	ori R17, (1<<ADSC)
+	sts ADCSRA, R17
+
 	CAPTURA_TEMPERATURA:
 		LDS R17,ADCSRA
-		SBRS R17,4			;saltea la siguiente instruccion si el bit 4 del registro esta en 1
+		SBRC R17,ADSC			;saltea la siguiente instruccion si el bit 4 del registro esta en 1
 		RJMP CAPTURA_TEMPERATURA
 
 	;Si se llega a este punto, es porque el ADC ya termino la conversion a digital
-
 	LDS R17,ADCL
 	LDS R18,ADCH
 	;Notar que no usaremos el ADCH pues no vamos a tener temperaturas tan altas
@@ -42,12 +45,13 @@
 	;La conversión a °C entonces seria:
 	;°C = [Vin*(1024)]/[5v] = Vin *  205
 
-	LDI R18,205
-	FMUL R17,R18
-
+	;LDI R18,205
+	;FMUL R17,R18
+	CLC 
+	ROR R17
 	;El resultado del producto está en R1:R0, pero utilizo solo R0 porque las temperaturas son bajas
-	MOV R16,R0
-
+//	MOV R16,R18
+//	call Putchr
 	;A continuacion se realiza la conversion de la temperatura en R16, de numero binario a BCD
 	CALL BIN_TO_BCD
 

@@ -65,33 +65,39 @@ PROGRAMA:
 	RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM ;inicializa la tabla
 
 	INICIO_LOOP_SENSADO:
-		CLI
+		;CLI
 		;leer temperatura T
 		RCALL DAME_TEMPERATURA
 		;Leer fecha y hora
-		RCALL DAME_FECHA_HORA
 		
+		RCALL DAME_FECHA_HORA
 		;almacenar en memoria ram: fecha+hora+temperatura
-		RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
+		;RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
 
 		;si la tabla de temperaturas tiene más de 512 bytes, copiar tabla en SD y luego limpiar RAM
-		LDS R17,ocupacion_tabla_temp_ram
-		CPI R17,LIM_MAX_TABLA_TEMPERATURAS
-		BRMI A_DORMIR
+		;LDS R17,ocupacion_tabla_temp_ram
+		;CPI R17,LIM_MAX_TABLA_TEMPERATURAS
+		;BRMI A_DORMIR
 		;Copiar RAM to SD
-		RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
-
+		;RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
+		SEI
 		A_DORMIR:
-			SEI
+			
 			;Dormir por N tiempo
+			ldi r16,0b00000
+			out PORTD,r16
 			sleep
 
+			
 		RJMP INICIO_LOOP_SENSADO
 
-	END: RJMP END 
+	END: 
+		RJMP END 
 
 
-	WAKEUP: RETI
+	WAKEUP:ldi r16,0b10000
+			out PORTD,r16
+	 RETI
 
 	.ORG 0x500  ;cambiar pos  ;msj para la pc                    
 MSJ1: .DB "1 para borrar SD,2 para transferir datos,3 para setear hora ",'\n',0

@@ -164,7 +164,7 @@ Putchr: ; Wait for empty transmit buffer
 	LDS		R16,UCSR0A
 	sbrs	R16,UDRE0
 	rjmp 	WAITPUTCHAR
-	ret ; Put data from (r16)
+	ret ; Put data from (r18)
 	
 
 ASCII_TO_BIN:

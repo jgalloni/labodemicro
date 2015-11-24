@@ -3,11 +3,13 @@ SETUP:
  	;usa R17
 	;LDI R17,0x00	;Load 0b00000000 in R17
 	;OUT DDRC,R16	;Configure PortC as an Input port
-	CBI DDRC,0 ;configura PORTC.0 como Input port
+	;CBI DDRC,0 ;configura PORTC.0 como Input port
 
 	;Configuración del ADC
-	LDI R17,0x00
-	STS ADMUX,R16
+	LDI R17,(1<<REFS0)
+	STS ADMUX,R17
+	ldi R17, (1<<ADEN)|(1<<ADPS2)|(1<<ADPS1)|(1<<ADPS0)
+	sts ADCSRA, R17
 	;Para elegir la referencia:
 	;CBI ADMUX,7
 	;CBI ADMUX,6
