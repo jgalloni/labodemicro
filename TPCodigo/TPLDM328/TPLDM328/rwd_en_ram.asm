@@ -6,40 +6,61 @@
  */ 
 
 
+
 ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
 	;recibe el parametro de la fecha y lo escribe en la posicion de ram que se le indique en formato DDMMAAHHMM
 	;Lueogo de la fecha coloca una "coma" para indicar el fin de linea
-	
+
+	LDI XL,LOW(tabla_temperaturas)
+	LDI XH,HIGH(tabla_temperaturas)
+	LDS R16,ocupacion_tabla_temp_ram
+
+loopasd:
+	LDI R17,16
+ultimalinea:
+	ADIW XH:XL,1
+	cpi
+	dec r17
+	BRNE ultimalinea
+	dec r16
+	BRNE loopasd ;va a la ultima posciion de la tabla
+
 	LDS R16,dia ;Se guarda en R16 un DATO de dos digito sen formato BCD
 	MOV R17,R16 
-	LSL R17
-	LSL R17
-	LSL R17
-	LSL R17
+	ROR R17
+	ROR R17
+	ROR R17
+	ROR R17
 	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+	ORI R17,0x30 ;En R17 esta el primer digito del DATO
 	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+	ORI R16,0x30 ;En R17 esta el primer digito del DATO
 	ST X+,R17            
     ST X+,R16
 
 	LDS R16,mes  ;Se guarda en R16 un DATO de dos digito sen formato BCD
 	MOV R17,R16 
-	LSL R17
-	LSL R17
-	LSL R17
-	LSL R17
+	ROR R17
+	ROR R17
+	ROR R17
+	ROR R17
 	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+	ORI R17,0x30 ;En R17 esta el primer digito del DATO
 	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+	ORI R16,0x30 ;En R17 esta el primer digito del DATO
 	ST X+,R17            
     ST X+,R16
 
 	LDS R16,anio ;Se guarda en R16 un DATO de dos digito sen formato BCD
 	MOV R17,R16 
-	LSL R17
-	LSL R17
-	LSL R17
-	LSL R17
+	ROR R17
+	ROR R17
+	ROR R17
+	ROR R17
 	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+	ORI R17,0x30 ;En R17 esta el primer digito del DATO
 	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+	ORI R16,0x30 ;En R17 esta el primer digito del DATO
 	ST X+,R17            
     ST X+,R16
 
@@ -48,60 +69,91 @@ ESCRIBIR_FECHA_HORA_TEMP_EN_RAM:
 	
 	LDS R16,horas ;Se guarda en R16 un DATO de dos digito sen formato BCD
 	MOV R17,R16 
-	LSL R17
-	LSL R17
-	LSL R17
-	LSL R17
+	ROR R17
+	ROR R17
+	ROR R17
+	ROR R17
 	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+	ORI R17,0x30 ;En R17 esta el primer digito del DATO
 	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+	ORI R16,0x30 ;En R17 esta el primer digito del DATO
 	ST X+,R17            
     ST X+,R16
 
 	LDS R16,minutos ;Se guarda en R16 un DATO de dos digito sen formato BCD
 	MOV R17,R16 
-	LSL R17
-	LSL R17
-	LSL R17
-	LSL R17
+	ROR R17
+	ROR R17
+	ROR R17
+	ROR R17
 	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+	ORI R17,0x30 ;En R17 esta el primer digito del DATO
 	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+	ORI R16,0x30 ;En R17 esta el primer digito del DATO
+	ST X+,R17            
+    ST X+,R16
+
+    LDS R16,segundo ;Se guarda en R16 un DATO de dos digito sen formato BCD
+	MOV R17,R16 
+	ROR R17
+	ROR R17
+	ROR R17
+	ROR R17
+	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+	ORI R17,0x30 ;En R17 esta el primer digito del DATO
+	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+	ORI R16,0x30 ;En R17 esta el primer digito del DATO
 	ST X+,R17            
     ST X+,R16
 
 	;Se escribe el parametro de la temperatura
 	;REVISAR como se escribe la temperatura
-	LDS R16,temperatura           
-    ST   X+,R16
+	LDS R16,temperatura
+	CALL Bin2ToBcd
+	MOV R17,R16 
+	ROR R17
+	ROR R17
+	ROR R17
+	ROR R17
+	ANDI R17,0x0F ;En R17 esta el primer digito del DATO
+	ORI R17,0x30 ;En R17 esta el primer digito del DATO
+	ANDI R16,0x0F ;En R16 esta el segundo digito del DATO
+	ORI R16,0x30 ;En R17 esta el primer digito del DATO
+	ST X+,R17            
+    ST X+,R16           
 
 	;Por ultimo coloca un caracter "coma" para indicar el fin de linea
 	LDI R16,','
 	ST X+,R16
+	LDI R16,'\n'
+	ST X+,R16
 
 	LDS R16,ocupacion_tabla_temp_ram	;actualizamos el valor de Ocupacion_tabla_temperaturas_en_ram
-	LDI R17,LONG_LOG
-	ADD R16,R17							;para ello lo que hacemos es sumar el nuevo largo de los datos copiados
+	inc R16								;para ello lo que hacemos es sumar el nuevo largo de los datos copiados
 	STS ocupacion_tabla_temp_ram,R16
 ret
 
 BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM:	
-	;llenar tabla con ceros y volver puntero al inicio
+;	;llenar tabla con ceros y volver puntero al inicio
 	;Usa R17 y R18
 
-	LDI R17,TAMANIO_TABLA_TEMPERATURA ;Contador
-	LDI XL,LOW(tabla_temperaturas)
-	LDI XH,HIGH(tabla_temperaturas)
-	LDI R18,0x00 ;Valor para rellenar los campos de la tabla
+;	LDI R17,TAMANIO_TABLA_TEMPERATURA ;Contador
+;	LDI XL,LOW(tabla_temperaturas)
+;	LDI XH,HIGH(tabla_temperaturas)
+;	LDI R18,0x00 ;Valor para rellenar los campos de la tabla
 
-	LOOP_BTFHTER:
-		ST X+,R18
-		DEC R17
-		BRNE LOOP_BTFHTER
+;	LOOP_BTFHTER:
+;		ST X+,R18
+;		DEC R17
+;		BRNE LOOP_BTFHTER
+;		LDI XL,LOW(tabla_temperaturas)
+;		LDI XH,HIGH(tabla_temperaturas)
 
-		LDI XL,LOW(tabla_temperaturas)
-		LDI XH,HIGH(tabla_temperaturas)
+;		LDI R17,0
+;		STS ocupacion_tabla_temp_ram,R17 ;marcamos como "0" el nivel de ocupaciÃ³n de la tabla
+LDI R16,0
+STS ocupacion_tabla_temp_ram,R16
 
-		LDI R17,0
-		STS ocupacion_tabla_temp_ram,R17 ;marcamos como "0" el nivel de ocupación de la tabla
 ret
 
 GET_TABLA_EN_RAM:
@@ -124,5 +176,21 @@ RELLENAR_TABLA_CON_CEROS_EN_RAM:
 		CP R17,R16
 		BRLO LOOP_BTCCER
 
-		STS ocupacion_tabla_temp_ram,R17 ;actualizamos el nivel de ocupación de la tabla
+		STS ocupacion_tabla_temp_ram,R17 ;actualizamos el nivel de ocupaciÃ³n de la tabla
+ret
+
+
+Bin2ToBcd:
+ 	mov r17,r16
+ 	ldi r18,0
+ looptobcd:
+	cpi r17,10
+	BRLO endbin2tobcd
+	SUBI r17,10
+	inc r18
+	rjmp looptobcd
+endbin2tobcd:
+	swap r18
+	andi r17,0x0F
+	ori r17,r18
 ret
