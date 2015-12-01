@@ -105,7 +105,7 @@ SETHORA:
 
 	RCALL Getchr
 
-	RCALL Getchr ;año
+	RCALL Getchr ;aÃ±o
 	st X+,R18
 	RCALL Getchr
 	st X+,R18
@@ -145,7 +145,7 @@ SETHORA:
 	ret
 
 TXDATA:
-;	call READSD ;meter esto en un loop hasta que este vacia la sd
+	Call SPI_READ_BLOCK
 	rcall SENDDATA
 	ret	
 
