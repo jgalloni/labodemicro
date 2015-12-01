@@ -1,19 +1,19 @@
-.INCLUDE "M328DEF.INC"				; Incluye definiciÛn archivos 
+.INCLUDE "M328DEF.INC"				; Incluye definici√≥n archivos 
 
-.EQU LIM_MAX_TABLA_TEMPERATURAS=60	;Max tamaÒo esperable en tabla en RAM
-.EQU TAMANIO_TABLA_TEMPERATURA=255	;bytes para llenar con lineas tipo DDMMAAHHMMTTTTT, 
+.EQU LIM_MAX_TABLA_TEMPERATURAS=32	;Max tama√±o esperable en tabla en RAM
+.EQU TAMANIO_TABLA_TEMPERATURA=513	;bytes para llenar con lineas tipo DDMMAAHHMMTTTTT, 
 .EQU TAMANIO_TEXTO_TEMPERATURA=1	;bytes
 ;.EQU BARRA='/'
 ;.EQU DOS_PUNTOS=':'
 ;.EQU COMA=','
 ;.EQU PCOMA=';'
-.EQU LONG_LOG=0x10;	;es el largo que tendra cada liea que se escriba con la T + Fecha en formato "DDMMAAHHMMSTT.T,"
+;.EQU LONG_LOG=0x10;	;es el largo que tendra cada liea que se escriba con la T + Fecha en formato "DDMMAAHHMMSTT.T,"
 
 .DSEG
 .org 0x160
 
 ;Variables necesarias
-	temperatura: .byte TAMANIO_TEXTO_TEMPERATURA	;almacena el dato del medidor de temperatura
+	temperatura: .byte 1	;almacena el dato del medidor de temperatura
 	dia: .byte 1
 	mes: .byte 1
 	anio: .byte 1
@@ -27,9 +27,7 @@
 	set_minutos: .byte 1
 	set_segundos: .byte 1
 	tabla_temperaturas: .byte TAMANIO_TABLA_TEMPERATURA
-	tabla_temperaturas_1: .byte TAMANIO_TABLA_TEMPERATURA
-	tabla_temperaturas_2: .byte TAMANIO_TABLA_TEMPERATURA	 
-	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar quÈ tan llena est· la ram con datos de tmeperatura+ fecha
+	ocupacion_tabla_temp_ram: .byte 1	;sirve para registrar qu√© tan llena est√° la ram con datos de tmeperatura+ fecha
 	indata: .byte 5
 
 .CSEG 
@@ -72,14 +70,16 @@ PROGRAMA:
 		
 		RCALL DAME_FECHA_HORA
 		;almacenar en memoria ram: fecha+hora+temperatura
-		;RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
+		RCALL ESCRIBIR_FECHA_HORA_TEMP_EN_RAM
 
-		;si la tabla de temperaturas tiene m·s de 512 bytes, copiar tabla en SD y luego limpiar RAM
-		;LDS R17,ocupacion_tabla_temp_ram
-		;CPI R17,LIM_MAX_TABLA_TEMPERATURAS
-		;BRMI A_DORMIR
+		;si la tabla de temperaturas tiene m√°s de 512 bytes, copiar tabla en SD y luego limpiar RAM
+		LDS R17,ocupacion_tabla_temp_ram
+		CPI R17,LIM_MAX_TABLA_TEMPERATURAS
+		BRMI A_DORMIR
 		;Copiar RAM to SD
-		;RCALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
+		CALL SD_INITIALIZE
+		CALL SPI_SEND_BLOCK
+		CALL BORRAR_TABLA_FECHA_HORA_TEMP_EN_RAM
 		SEI
 		A_DORMIR:
 			
